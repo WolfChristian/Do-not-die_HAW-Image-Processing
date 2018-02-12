@@ -156,6 +156,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 695706103}
+    - target: {fileID: 1636332720773842, guid: e732dac6111425641a130b8eecd95115, type: 2}
+      propertyPath: m_Name
+      value: GameControllerSwipe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e732dac6111425641a130b8eecd95115, type: 2}
   m_IsPrefabParent: 0
@@ -164,6 +168,23 @@ Transform:
   m_PrefabParentObject: {fileID: 4873291395247280, guid: 5032dc79708b5e64da7d4adde9002d6f,
     type: 2}
   m_PrefabInternal: {fileID: 1247758052}
+--- !u!1 &957600517 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1636332720773842, guid: e732dac6111425641a130b8eecd95115,
+    type: 2}
+  m_PrefabInternal: {fileID: 399333889}
+--- !u!114 &957600518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957600517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04f1ae5eda72ce41a98a7c07e0d7c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Main: {fileID: 0}
 --- !u!1001 &1247758052
 Prefab:
   m_ObjectHideFlags: 0

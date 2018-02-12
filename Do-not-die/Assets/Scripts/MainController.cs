@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class MainController : MonoBehaviour {
 
     public int difficulty = 0;
     public int life = 3;
@@ -21,4 +22,15 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void LoadScene()
+    {
+
+        SceneManager.LoadScene(1);
+        difficulty++;
+
+
+    }
+
 }
+
