@@ -7,11 +7,12 @@ public class MainController : MonoBehaviour {
 
     public int difficulty = 0;
     public int life = 3;
-
+    public GameObject gameUI;
 
     //When loading
     private void Awake() {
         DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameUI);
     }
     // Use this for initialization
     void Start () {
