@@ -5,12 +5,14 @@ using UnityEngine;
 public class SwipeController : MonoBehaviour {
 
     public GameObject Main;
+    
     float Timer = 100;
     int diff;
     
     // Use this for initialization
 	void Start () {
         Main = GameObject.Find("MainController");
+       
         diff = Main.GetComponent<MainController>().difficulty;
         if(diff < 5)
         {

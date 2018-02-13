@@ -4,50 +4,64 @@ using UnityEngine;
 
 public class Swipe : MonoBehaviour {
 
-
+    public GameObject Ui;
     private bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
     private Vector2 startTouch, swipeDelta;
     private bool isDraging = false;
 
+
+    private void Start()
+    {
+        Ui = GameObject.Find("UIComponents");
+    }
     private void Update()
     {
+
+
         tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
 
         #region Standalone Inputs
-        if (Input.GetMouseButtonDown(0))
-        {
-            tap = true;
-            isDraging = true;
-            startTouch = Input.mousePosition;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            isDraging = false;
-            Reset();
-        }
-
-        #endregion
-
-        #region Mobile Inputs
-        if (Input.touches.Length > 0)
-        {
-            if(Input.touches[0].phase == TouchPhase.Began)
+        
+            if (Input.GetMouseButtonDown(0))
             {
                 tap = true;
                 isDraging = true;
-                startTouch = Input.touches[0].position;
+                startTouch = Input.mousePosition;
             }
-            else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
+            else if (Input.GetMouseButtonUp(0))
             {
                 isDraging = false;
                 Reset();
             }
-        }
+        
+
+
+        #endregion
+
+        #region Mobile Inputs
+       
+            if (Input.touches.Length > 0)
+            {
+                if (Input.touches[0].phase == TouchPhase.Began)
+                {
+                    tap = true;
+                    isDraging = true;
+                    startTouch = Input.touches[0].position;
+                }
+                else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
+                {
+                    isDraging = false;
+                    Reset();
+                }
+            }
+        
+
         #endregion
 
         // Calculate the distance
+
         swipeDelta = Vector2.zero;
-        if (isDraging)
+        if (isDraging && !Ui.GetComponent<PauseMenu>().gameIsPaused)
         {
             if(Input.touches.Length > 0)
             {
