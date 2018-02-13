@@ -9,7 +9,7 @@ public class SwipeMove : MonoBehaviour {
     private Vector3 desiredPosition;
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if (swipeControls.SwipeLeft)
             desiredPosition += Vector3.left;

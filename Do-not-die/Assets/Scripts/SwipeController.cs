@@ -25,7 +25,7 @@ public class SwipeController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         Timer = Timer - Time.deltaTime;
 
         if(Timer < 0)

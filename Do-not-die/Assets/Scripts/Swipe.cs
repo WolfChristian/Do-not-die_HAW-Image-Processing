@@ -14,7 +14,7 @@ public class Swipe : MonoBehaviour {
     {
         Ui = GameObject.Find("UIComponents");
     }
-    private void Update()
+    private void FixedUpdate()
     {
 
 
