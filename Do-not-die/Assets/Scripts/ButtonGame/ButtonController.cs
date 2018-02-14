@@ -18,8 +18,8 @@ public class ButtonController : MonoBehaviour {
     void Start () {
         Main = GameObject.Find("MainController");
 
-        //diff = Main.GetComponent<MainController>().difficulty;
-        diff = 1;
+        diff = Main.GetComponent<MainController>().difficulty;
+        //diff = 1;
         if (diff < 5)
         {
             Timer = 5f;
