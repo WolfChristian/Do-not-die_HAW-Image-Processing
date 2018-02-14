@@ -463,7 +463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Main: {fileID: 0}
+  Slider: {fileID: 0}
   textfield: {fileID: 1623029277}
   canvas: {fileID: 185039862}
-  buttonV1: {fileID: 1893544374920910, guid: 52aa1100009025e4dbb97eabf75d0e74, type: 2}
-  buttonV2: {fileID: 1017814659172024, guid: 881d5e307e5c6814e8f03985316a3667, type: 2}
+  buttonV1: {fileID: 1661387530583800, guid: 52aa1100009025e4dbb97eabf75d0e74, type: 2}
+  buttonV2: {fileID: 1483177836259236, guid: 881d5e307e5c6814e8f03985316a3667, type: 2}
