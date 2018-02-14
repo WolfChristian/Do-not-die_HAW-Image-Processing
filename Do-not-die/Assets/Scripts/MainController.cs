@@ -26,7 +26,7 @@ public class MainController : MonoBehaviour {
 
     public void LoadScene()
     {
-        int rand = Random.Range(1, 3);
+        int rand = Random.Range(2, 4);
         SceneManager.LoadScene(rand);
         difficulty++;
 
@@ -41,7 +41,7 @@ public class MainController : MonoBehaviour {
     private void checkLife() {
         if (life <= 0)
         {
-            //Scenemanager.LoadScene(x);
+            SceneManager.LoadScene(1);
             difficulty = 0;
             life = 3;
         }
