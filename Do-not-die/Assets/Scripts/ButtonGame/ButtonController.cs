@@ -7,10 +7,13 @@ public class ButtonController : MonoBehaviour {
 
     public GameObject Main;
     public Text textfield;
-    public GameObject buttonV1;
-    public GameObject buttonV2;
+    public Canvas canvas;
+    public GameObject buttonV1;//Spawnable button 1
+    public GameObject buttonV2;//Spawnable button 2
+    private GameObject button;
     float Timer = 100;
     int diff;
+    bool isAlternative = false;//Indicator for alternative task
 
     void Start () {
         Main = GameObject.Find("MainController");
@@ -20,22 +23,25 @@ public class ButtonController : MonoBehaviour {
         if (diff < 5)
         {
             Timer = 5f;
-
-            Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
+            button =Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
+            button.transform.SetParent(canvas.transform,false);
             textfield.text = "Do not press the Red Button";
         }
         else
         {
             Timer = 3f;
-            //%30 percent chance
+            //%30 percent chance to spawn a alternative task
             if (Random.value > 0.3)
             {
-                Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
+                button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
+                button.transform.SetParent(canvas.transform, false);
                 textfield.text = "Do press the Red Button";
+                isAlternative = true;
             }
             else
             {
-                Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
+                button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
+                button.transform.SetParent(canvas.transform, false);
                 textfield.text = "Do not press the Red Button";
             }
         }
@@ -46,10 +52,25 @@ public class ButtonController : MonoBehaviour {
 
         Timer = Timer - Time.deltaTime;
 
-        if (Timer < 0)
+        if (Timer < 0 && isAlternative == false)
         {
-            Main.GetComponent<MainController>().LoadScene();
+
+            winGame();
         }
+        else if(Timer<0) {
+
+            loseGame();
+        }
+
+    }
+    //Wins game 
+    public void winGame() {
+        Main.GetComponent<MainController>().LoadScene();
+    }
+    //Loses Game
+    public void loseGame() {
+       
+        Main.GetComponent<MainController>().loselife();
 
     }
 }
