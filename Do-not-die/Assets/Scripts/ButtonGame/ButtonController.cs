@@ -6,6 +6,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour {
 
     public GameObject Main;
+    public GameObject Slider;
     public Text textfield;
     public Canvas canvas;
     public GameObject buttonV1;//Spawnable button 1
@@ -17,7 +18,7 @@ public class ButtonController : MonoBehaviour {
 
     void Start () {
         Main = GameObject.Find("MainController");
-
+        Slider = GameObject.Find("TimeBar");
         diff = Main.GetComponent<MainController>().difficulty;
         //diff = 1;
         if (diff < 5)
@@ -45,13 +46,15 @@ public class ButtonController : MonoBehaviour {
                 textfield.text = "Do not press the Red Button";
             }
         }
+        
+        Slider.GetComponent<Slider>().maxValue = Timer;
 
     }
 	
 	void FixedUpdate () {
 
         Timer = Timer - Time.deltaTime;
-
+        Slider.GetComponent<Slider>().value = Timer;
         if (Timer < 0 && isAlternative == false)
         {
 
