@@ -13,6 +13,7 @@ public class GameOverController : MonoBehaviour {
         Main = GameObject.Find("MainController");
         diff = Main.GetComponent<MainController>().difficulty;
         score.text="Your Score: "+diff;
+        Main.GetComponent<MainController>().difficulty = 0;
         Destroy(Main);
         Destroy(GameObject.Find("GameUI"));
     }
@@ -23,7 +24,7 @@ public class GameOverController : MonoBehaviour {
 	}
     public void returnToMainMenu() {
         
-            SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
         
     }
 }

@@ -35,14 +35,16 @@ public class MainController : MonoBehaviour {
 
     public void loselife() {
         life--;
+        gameUI.GetComponent<UIScript>().updateLife();
         checkLife();
+        
     }
     //Checks your lifetotal and sends you to Gameover Scene
     private void checkLife() {
         if (life <= 0)
         {
             SceneManager.LoadScene(1);
-            difficulty = 0;
+           // difficulty = 0;
             life = 3;
         }
         else {
