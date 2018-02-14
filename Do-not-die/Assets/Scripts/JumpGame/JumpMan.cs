@@ -11,11 +11,12 @@ public class JumpMan : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         rb2d = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 		if(isDead == false)
         {
             if (Input.GetMouseButtonDown(0))
@@ -25,8 +26,11 @@ public class JumpMan : MonoBehaviour {
             }
         }
 	}
-    void OnCollisionEnter2D()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        isDead = true;  
+        if (!(collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2"))
+        {
+            isDead = true;
+        } 
     }
 }
