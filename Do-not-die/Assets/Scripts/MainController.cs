@@ -49,9 +49,7 @@ public class MainController : MonoBehaviour {
             LoadScene();
         }
     }
-    public void loadMainMenu() {
-        SceneManager.LoadScene(0);
-    }
+    
 
 }
 

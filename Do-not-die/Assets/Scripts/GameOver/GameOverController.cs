@@ -13,6 +13,8 @@ public class GameOverController : MonoBehaviour {
         Main = GameObject.Find("MainController");
         diff = Main.GetComponent<MainController>().difficulty;
         score.text="Your Score: "+diff;
+        Destroy(Main);
+        Destroy(GameObject.Find("GameUI"));
     }
 	
 	// Update is called once per frame
@@ -20,7 +22,8 @@ public class GameOverController : MonoBehaviour {
 		
 	}
     public void returnToMainMenu() {
-         Main.GetComponent<MainController>().loadMainMenu();
-        //SceneManager.LoadScene(0);
+        
+            SceneManager.LoadScene(0);
+        
     }
 }
