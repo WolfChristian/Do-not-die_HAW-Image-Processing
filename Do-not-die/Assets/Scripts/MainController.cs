@@ -33,5 +33,22 @@ public class MainController : MonoBehaviour {
 
     }
 
+    public void loselife() {
+        life--;
+        checkLife();
+    }
+    //Checks your lifetotal and sends you to Gameover Scene
+    private void checkLife() {
+        if (life <= 0)
+        {
+            //Scenemanager.LoadScene(x);
+            difficulty = 0;
+            life = 3;
+        }
+        else {
+            LoadScene();
+        }
+    }
+
 }
 
