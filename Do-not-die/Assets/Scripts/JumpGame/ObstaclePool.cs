@@ -11,7 +11,7 @@ public class ObstaclePool : MonoBehaviour {
     private GameObject[] obstacle;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
     private float timeSinceLastSpawned;
-    private float spawnXPosition = 10f;
+    private float spawnYPosition = -2f;
     private int currentObstacle = 0;
 
 	// Use this for initialization
@@ -30,7 +30,7 @@ public class ObstaclePool : MonoBehaviour {
         if (timeSinceLastSpawned >= spawnRate)
         {
             timeSinceLastSpawned = 0;
-            obstacle[currentObstacle].transform.position = new Vector2(0, spawnXPosition);
+            obstacle[currentObstacle].transform.position = new Vector2(10, spawnYPosition);
             currentObstacle++;
             if(currentObstacle >= obstaclePoolSize)
             {
