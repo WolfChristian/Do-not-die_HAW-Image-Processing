@@ -14,7 +14,7 @@ public class ScrollingObject : MonoBehaviour {
     // Use this for initialization
     void Start () {
         speed = JumpMain.GetComponent<JumpController>().scrollSpeed;
-        
+        //speed = -1.5f;
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = new Vector2(speed, 0);
 	}	
