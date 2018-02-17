@@ -10,6 +10,7 @@ public class SwipeController : MonoBehaviour {
     float timer = 100;
     public GameObject slider;
     public GameObject cube;
+    public GameObject swipeSpawn;
     
     int diff;
     
@@ -23,10 +24,12 @@ public class SwipeController : MonoBehaviour {
         if(diff < 5)
         {
             timerstart = 5f;
+            
         }
         else
         {
             timerstart = 3f;
+            
         }
 
         timer = timerstart;
