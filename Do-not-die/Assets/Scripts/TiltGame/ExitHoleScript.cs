@@ -8,6 +8,7 @@ public class ExitHoleScript : MonoBehaviour {
     void Start () {
         Main = GameObject.Find("MainController");
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         winGame();
