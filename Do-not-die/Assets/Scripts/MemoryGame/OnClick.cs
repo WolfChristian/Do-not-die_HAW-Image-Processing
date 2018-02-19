@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class OnClick : MonoBehaviour {
 
+    public int type;
+    public GameObject memoryController;
+    public bool canBeClicked = true;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -16,8 +18,25 @@ public class OnClick : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Debug.Log("CLICKED");
-        this.transform.GetChild(0).gameObject.SetActive(true);
+        if (canBeClicked)
+        {
+            Debug.Log("CLICKED");
+            this.transform.GetChild(0).gameObject.SetActive(true);
+            if (memoryController.GetComponent<MemoryController>().firstClick == false)
+            {
+                memoryController.GetComponent<MemoryController>().firstClick = true;
+                memoryController.GetComponent<MemoryController>().clickedFields.Add(this.gameObject);
+                canBeClicked = false;
+
+            }
+            else
+            {
+                memoryController.GetComponent<MemoryController>().clickedFields.Add(this.gameObject);
+                memoryController.GetComponent<MemoryController>().secondClick = true;
+            }
+        }
+        
+        
     }
 
     

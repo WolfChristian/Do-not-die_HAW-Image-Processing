@@ -12,7 +12,7 @@ public class SwipeController : MonoBehaviour {
     public GameObject cube;
     public GameObject swipeSpawn;
     
-    int diff;
+    public int diff;
     
     // Use this for initialization
 	void Start () {

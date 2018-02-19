@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RedButton.unity
     guid: 7a16f26bd9cb8824ea4691874f120b7f
+  - enabled: 1
+    path: Assets/Scenes/MemoryGame.unity
+    guid: d1b2f87588bf51a4ca6d520a27b956db
