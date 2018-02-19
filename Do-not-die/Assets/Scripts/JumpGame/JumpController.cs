@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class JumpController : MonoBehaviour {
     
-    public float scrollSpeed = -1.5f;
+    public float scrollSpeed = -7f;
     public GameObject Main;
     float Timerstart = 0f;
     float Timer = 100;

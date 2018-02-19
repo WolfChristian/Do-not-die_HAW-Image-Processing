@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class JumpMan : MonoBehaviour {
 
-    public float upForce = 200f;
 
+    public float upForce = 450f;
+    public float fallMultiplier = 3f;
+
+    private bool isTouchingGround = false;
     private bool isDead = false;
     private Rigidbody2D rb2d;
-
+    
 	// Use this for initialization
 	void Start () {
 
@@ -19,10 +22,19 @@ public class JumpMan : MonoBehaviour {
 	void FixedUpdate() {
 		if(isDead == false)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (isTouchingGround)
             {
-                rb2d.velocity = Vector2.zero;
-                rb2d.AddForce(new Vector2(0, upForce));
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isTouchingGround = false;
+
+                    rb2d.velocity = Vector2.zero;
+                    rb2d.AddForce(new Vector2(0, upForce));
+                }
+            }
+            if (rb2d.velocity.y < 0)
+            {
+                rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
         }
 	}
@@ -32,5 +44,9 @@ public class JumpMan : MonoBehaviour {
         {
             isDead = true;
         } 
+        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2")
+        {
+            isTouchingGround = true;
+        }
     }
 }

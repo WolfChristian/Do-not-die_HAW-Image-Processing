@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1426367473761152}
+  m_RootGameObject: {fileID: 1806985707316394}
   m_IsPrefabParent: 1
---- !u!1 &1426367473761152
+--- !u!1 &1806985707316394
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4022422212294864}
-  - component: {fileID: 114303098819511174}
-  - component: {fileID: 114566213009542472}
-  - component: {fileID: 114483429076171198}
+  - component: {fileID: 4637138776374620}
+  - component: {fileID: 114593590672899034}
+  - component: {fileID: 114001687180189802}
+  - component: {fileID: 114253263838287174}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -29,12 +29,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4022422212294864
+--- !u!4 &4637138776374620
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426367473761152}
+  m_GameObject: {fileID: 1806985707316394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.1474814, y: 0.004645698, z: -9.910213}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,43 +42,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114303098819511174
+--- !u!114 &114001687180189802
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426367473761152}
+  m_GameObject: {fileID: 1806985707316394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 635de6a1c9fdc0d45b25347268f49d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114483429076171198
+  scrollSpeed: -7
+  Main: {fileID: 0}
+  Slider: {fileID: 0}
+--- !u!114 &114253263838287174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426367473761152}
+  m_GameObject: {fileID: 1806985707316394}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7f888710e21e1b40bcbd36285b3244d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 4
-  obstaclePoolSize: 5
-  obstaclePrefab: {fileID: 1644802784839932, guid: e2305a8e34ce285438dc6350a4045a02,
+  obstaclePoolSize: 4
+  obstaclePrefab: {fileID: 1819477469556550, guid: bea3b6fc01ea353448795f35a3c6884b,
     type: 2}
---- !u!114 &114566213009542472
+--- !u!114 &114593590672899034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426367473761152}
+  m_GameObject: {fileID: 1806985707316394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635de6a1c9fdc0d45b25347268f49d9a, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -1.5
-  Main: {fileID: 0}
-  Slider: {fileID: 0}
