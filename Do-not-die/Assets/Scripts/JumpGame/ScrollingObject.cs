@@ -9,10 +9,10 @@ public class ScrollingObject : MonoBehaviour {
 
 
     public GameObject JumpMain;
-
     
     // Use this for initialization
     void Start () {
+        JumpMain = GameObject.Find("GameController");
         speed = JumpMain.GetComponent<JumpController>().scrollSpeed;
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = new Vector2(speed, 0);

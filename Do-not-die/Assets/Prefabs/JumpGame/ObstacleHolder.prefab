@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee9597f25a1ee04ebff8db6810ba020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpMain: {fileID: 1205009069299300, guid: 6a36b25f1627a9b4284942061680769e, type: 2}
+  JumpMain: {fileID: 0}
 --- !u!114 &114692308922828298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b7c095af6df6148a4352d5bc5fe40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpMain: {fileID: 1205009069299300, guid: 6a36b25f1627a9b4284942061680769e, type: 2}
+  JumpMain: {fileID: 0}
 --- !u!212 &212812366786522274
 SpriteRenderer:
   m_ObjectHideFlags: 1

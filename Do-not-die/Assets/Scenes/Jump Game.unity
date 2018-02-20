@@ -361,6 +361,11 @@ Prefab:
       propertyPath: obstaclePoolSize
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114100881894698848, guid: 6a36b25f1627a9b4284942061680769e,
+        type: 2}
+      propertyPath: scoreCheck
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a36b25f1627a9b4284942061680769e, type: 2}
   m_IsPrefabParent: 0

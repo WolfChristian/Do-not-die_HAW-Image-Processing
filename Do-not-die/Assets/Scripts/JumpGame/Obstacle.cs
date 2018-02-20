@@ -6,6 +6,11 @@ public class Obstacle : MonoBehaviour {
 
     public GameObject JumpMain;
 
+    private void Start()
+    {
+        JumpMain = GameObject.Find("GameController");
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "JumpMan")

@@ -11,15 +11,16 @@ public class JumpController : MonoBehaviour {
     float Timer = 100;
     public GameObject Slider;
 
-    private int scoreCheck = 0;
+    public int scoreCheck = 0;
     int diff;
 
     // Use this for initialization
     void Start()
     {
+        
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        scoreCheck = 0;
+        
 
         //diff = Main.GetComponent<MainController>().difficulty;
         diff = 2;
@@ -40,6 +41,9 @@ public class JumpController : MonoBehaviour {
     {
         scoreCheck++;
         Debug.Log(scoreCheck);
+        if (scoreCheck > 3) {
+            Debug.Log("win");
+        }
     }
 
     // Update is called once per frame
