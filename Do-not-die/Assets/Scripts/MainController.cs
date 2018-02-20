@@ -26,7 +26,7 @@ public class MainController : MonoBehaviour {
 
     public void LoadScene()
     {
-        int rand = Random.Range(2, 6);
+        int rand = Random.Range(2, 7);
         SceneManager.LoadScene(rand);
         difficulty++;
 

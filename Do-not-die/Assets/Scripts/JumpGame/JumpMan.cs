@@ -7,6 +7,7 @@ public class JumpMan : MonoBehaviour {
 
     public float upForce = 450f;
     public float fallMultiplier = 3f;
+    public GameObject JumpMain;
 
     private bool isTouchingGround = false;
     private bool isDead = false;
@@ -20,8 +21,6 @@ public class JumpMan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate() {
-		if(isDead == false)
-        {
             if (isTouchingGround)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -36,13 +35,12 @@ public class JumpMan : MonoBehaviour {
             {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-        }
 	}
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (!(collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2"))
         {
-            isDead = true;
+            JumpMain.GetComponent<JumpController>().loseTheGame();
         } 
         if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2")
         {

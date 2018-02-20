@@ -22,8 +22,8 @@ public class JumpController : MonoBehaviour {
         Slider = GameObject.Find("TimeBar");
         
 
-        //diff = Main.GetComponent<MainController>().difficulty;
-        diff = 2;
+        diff = Main.GetComponent<MainController>().difficulty;
+        //diff = 2;
         if (diff < 5)
         {
             Timerstart = 5f;
@@ -35,7 +35,7 @@ public class JumpController : MonoBehaviour {
         }
 
         Timer = Timerstart;
-        //Slider.GetComponent<Slider>().maxValue = Timerstart;
+        Slider.GetComponent<Slider>().maxValue = Timerstart;
     }
     public void ScoreChange()
     {
@@ -45,16 +45,20 @@ public class JumpController : MonoBehaviour {
             Debug.Log("win");
         }
     }
+    public void loseTheGame()
+    {
+        Main.GetComponent<MainController>().loselife();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Timer = Timer - Time.deltaTime;
-        //Slider.GetComponent<Slider>().value = Timer;
+        Slider.GetComponent<Slider>().value = Timer;
 
         if (Timer < 0)
         {
-           // Main.GetComponent<MainController>().LoadScene();
+            Main.GetComponent<MainController>().LoadScene();
         }
     }
 }

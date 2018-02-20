@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TiltGame.unity
     guid: 1e7eec5481a2dd44294780230a0ff8e9
+  - enabled: 1
+    path: Assets/Scenes/Jump Game.unity
+    guid: 87874868f032b7e428be9fc938869132
