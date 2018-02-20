@@ -36,7 +36,7 @@ public class JumpController : MonoBehaviour {
         Timer = Timerstart;
         //Slider.GetComponent<Slider>().maxValue = Timerstart;
     }
-    public void ScoreUpdate()
+    public void ScoreChange()
     {
         scoreCheck++;
         Debug.Log(scoreCheck);

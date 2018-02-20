@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour {
     {
         if(other.gameObject.name == "JumpMan")
         {
-            JumpMain.GetComponent<JumpController>().ScoreUpdate();
+            JumpMain.GetComponent<JumpController>().ScoreChange();
             Debug.Log("Hello");
         }
     }
