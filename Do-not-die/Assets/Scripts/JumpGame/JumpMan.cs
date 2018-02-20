@@ -21,15 +21,11 @@ public class JumpMan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate() {
-            if (isTouchingGround)
+            if (isTouchingGround && Input.GetMouseButton(0))
             {
-                if (Input.GetMouseButtonDown(0))
-                {
                     isTouchingGround = false;
-
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(new Vector2(0, upForce));
-                }
             }
             if (rb2d.velocity.y < 0)
             {
@@ -41,10 +37,10 @@ public class JumpMan : MonoBehaviour {
         if (!(collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2"))
         {
             JumpMain.GetComponent<JumpController>().loseTheGame();
-        } 
-        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Ground 2")
+        }
+        else
         {
             isTouchingGround = true;
-        }
+        } 
     }
 }
