@@ -67,6 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 2
-  obstaclePoolSize: 3
+  obstaclePoolSize: 4
   obstaclePrefab: {fileID: 1394955507553738, guid: 10e13900fcf5f9f47b3c074c3bafcc19,
     type: 2}

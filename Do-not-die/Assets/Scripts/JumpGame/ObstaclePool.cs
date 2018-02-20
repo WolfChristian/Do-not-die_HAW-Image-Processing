@@ -5,11 +5,11 @@ using UnityEngine;
 public class ObstaclePool : MonoBehaviour {
 
     public float spawnRate = 2f;
-    public int obstaclePoolSize = 3;
+    public int obstaclePoolSize = 4;
     public GameObject obstaclePrefab;
 
     private GameObject[] obstacle;
-    private Vector2 objectPoolPosition = new Vector2(10f, -2f);
+    private Vector2 objectPoolPosition = new Vector2(10f, 10f);
     private float timeSinceLastSpawned;
     private float spawnYPosition = -2f;
     private int currentObstacle = 0;
