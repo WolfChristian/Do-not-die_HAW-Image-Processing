@@ -20,7 +20,7 @@ public class ButtonController : MonoBehaviour {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
         diff = Main.GetComponent<MainController>().difficulty;
-        //diff = 1;
+        
         if (diff < 5)
         {
             Timer = 5f;

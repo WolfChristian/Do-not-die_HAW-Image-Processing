@@ -13,8 +13,8 @@ public class TiltController : MonoBehaviour {
     void Start () {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        //diff = Main.GetComponent<MainController>().difficulty;
-        diff = 1;
+        diff = Main.GetComponent<MainController>().difficulty;
+        
         if (diff < 5) {
             Timer = 8f;
             Instantiate(level1, new Vector3(2.166283f, 0.5105593f,0), Quaternion.identity);

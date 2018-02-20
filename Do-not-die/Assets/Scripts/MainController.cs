@@ -19,7 +19,7 @@ public class MainController : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	
 	void FixedUpdate () {
 		
 	}
@@ -32,7 +32,7 @@ public class MainController : MonoBehaviour {
 
 
     }
-
+    //Lose 1 life update UI calls checklife
     public void loselife() {
         life--;
         gameUI.GetComponent<UIScript>().updateLife();
