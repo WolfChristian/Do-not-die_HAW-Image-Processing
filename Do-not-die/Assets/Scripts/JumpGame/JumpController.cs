@@ -11,6 +11,7 @@ public class JumpController : MonoBehaviour {
     float Timer = 100;
     public GameObject Slider;
 
+    private int scoreCheck = 0;
     int diff;
 
     // Use this for initialization
@@ -18,7 +19,7 @@ public class JumpController : MonoBehaviour {
     {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-
+        scoreCheck = 0;
 
         //diff = Main.GetComponent<MainController>().difficulty;
         diff = 2;
@@ -29,10 +30,16 @@ public class JumpController : MonoBehaviour {
         else
         {
             Timerstart = 3f;
+            scrollSpeed = -10f;
         }
 
         Timer = Timerstart;
         //Slider.GetComponent<Slider>().maxValue = Timerstart;
+    }
+    public void ScoreUpdate()
+    {
+        scoreCheck++;
+        Debug.Log(scoreCheck);
     }
 
     // Update is called once per frame
@@ -45,7 +52,6 @@ public class JumpController : MonoBehaviour {
         {
            // Main.GetComponent<MainController>().LoadScene();
         }
-
     }
 }
 
