@@ -31,7 +31,7 @@ public class JumpController : MonoBehaviour {
         else
         {
             Timerstart = 3f;
-            scrollSpeed = -10f;
+            scrollSpeed = -20f;
         }
 
         Timer = Timerstart;
