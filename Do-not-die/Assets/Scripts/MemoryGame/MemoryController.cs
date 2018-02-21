@@ -62,13 +62,17 @@ public class MemoryController : MonoBehaviour {
         diff = main.GetComponent<MainController>().difficulty;
         if (diff < 5)
         {
-            timerstart = 10f;
+            timerstart = 12f;
+
+        }
+        else if (diff < 10)
+        {
+            timerstart = 9f;
 
         }
         else
         {
-            timerstart = 8f;
-
+            timerstart = 7f;
         }
 
         timer = timerstart;

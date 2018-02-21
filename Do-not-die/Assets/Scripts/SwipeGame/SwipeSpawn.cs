@@ -20,10 +20,14 @@ public class SwipeSpawn : MonoBehaviour {
             timerStart = 1f;
 
         }
-        else
+        else if(diff < 10)
         {
             timerStart = 0.5f;
 
+        }
+        else
+        {
+            timerStart = 0.3f;
         }
         timer = timerStart;
 

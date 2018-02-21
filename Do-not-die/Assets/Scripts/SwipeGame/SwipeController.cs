@@ -26,11 +26,16 @@ public class SwipeController : MonoBehaviour {
             timerstart = 5f;
             
         }
-        else
+        else if(diff < 10)
         {
-            timerstart = 3f;
+            timerstart = 8f;
             
         }
+        else
+        {
+            timerstart = 12f;
+        }
+
 
         timer = timerstart;
         slider.GetComponent<Slider>().maxValue = timerstart;
