@@ -9,6 +9,7 @@ public class OnClick : MonoBehaviour {
     public bool canBeClicked = true;
 	// Use this for initialization
 	void Start () {
+        memoryController = GameObject.Find("MemoryController");
 	}
 	
 	// Update is called once per frame
