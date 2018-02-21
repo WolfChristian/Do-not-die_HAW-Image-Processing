@@ -6,7 +6,7 @@ public class BallScript : MonoBehaviour {
 
     public Rigidbody2D ball;
 
-    public float moveSpeed = 0.5f;
+    public float moveSpeed = 0.8f;
 
     float dirX, dirY;
 

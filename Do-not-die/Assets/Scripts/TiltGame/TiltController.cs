@@ -16,11 +16,11 @@ public class TiltController : MonoBehaviour {
         diff = Main.GetComponent<MainController>().difficulty;
         
         if (diff < 5) {
-            Timer = 8f;
+            Timer = 10f;
             Instantiate(level1, new Vector3(2.166283f, 0.5105593f,0), Quaternion.identity);
         }
         else if (diff > 5 && diff < 10) {
-            Timer = 7f;
+            Timer = 9f;
             if (Random.value > 0.5)
             {
                 Instantiate(level2, new Vector3(2.166283f, 0.5105593f, 0), Quaternion.identity);
@@ -30,7 +30,7 @@ public class TiltController : MonoBehaviour {
             }
         }
         else {
-            Timer =6f;
+            Timer =7f;
             if (Random.value > 0.3)
             {
                 Instantiate(level3, new Vector3(2.166283f, 0.5105593f, 0), Quaternion.identity);
