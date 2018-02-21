@@ -16,9 +16,9 @@ public class SwipeMove : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
 
-        if (swipeControls.SwipeLeft)
+        if (swipeControls.SwipeLeft && player.position.x > -3)
             desiredPosition += Vector3.left*2;
-        if (swipeControls.SwipeRight)
+        if (swipeControls.SwipeRight && player.position.x < 3)
             desiredPosition += Vector3.right*2;
       
 
