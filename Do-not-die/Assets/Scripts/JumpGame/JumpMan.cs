@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class JumpMan : MonoBehaviour {
 
-
-    public float upForce = 450f;
-    public float fallMultiplier = 3f;
     public GameObject JumpMain;
 
+    private float upForce = 85f;
+    private float fallMultiplier = 2.5f;
     private bool isTouchingGround = false;
     private bool isDead = false;
     private Rigidbody2D rb2d;
     
 	// Use this for initialization
 	void Start () {
-
         rb2d = GetComponent<Rigidbody2D>();
-	}
+        rb2d.gravityScale = 4f;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate() {
@@ -25,7 +24,7 @@ public class JumpMan : MonoBehaviour {
             {
                     isTouchingGround = false;
                     rb2d.velocity = Vector2.zero;
-                    rb2d.AddForce(new Vector2(0, upForce));
+                    rb2d.AddForce(new Vector2(0, upForce*10));
             }
             if (rb2d.velocity.y < 0)
             {

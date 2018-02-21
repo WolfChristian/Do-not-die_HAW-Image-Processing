@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ObstaclePool : MonoBehaviour {
 
-    public float spawnRate = 2f;
-    public int obstaclePoolSize = 4;
     public GameObject obstaclePrefab;
 
+    private int obstaclePoolSize = 4;
+    private float spawnRate = 0.5f;
     private GameObject[] obstacle;
     private Vector2 objectPoolPosition = new Vector2(10f, 10f);
     private float timeSinceLastSpawned;
     private float spawnYPosition = -2f;
     private int currentObstacle = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,9 @@ public class ObstaclePool : MonoBehaviour {
         {
                 if (timeSinceLastSpawned >= spawnRate)
             {
+                float randm = Random.Range(8, 14);
+                spawnRate = (randm / 10);
+                Debug.Log(spawnRate);
                 timeSinceLastSpawned = 0;
                 obstacle[currentObstacle].transform.position = new Vector2(10, spawnYPosition);
                 currentObstacle++;

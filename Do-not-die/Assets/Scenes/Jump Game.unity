@@ -201,8 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c124ff2695d5da84cbe0ea7c2734395a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upForce: 450
-  fallMultiplier: 3
   JumpMain: {fileID: 2047107817}
 --- !u!50 &424290879
 Rigidbody2D:
@@ -217,7 +215,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1014,7 +1012,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f888710e21e1b40bcbd36285b3244d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 2
-  obstaclePoolSize: 4
   obstaclePrefab: {fileID: 1394955507553738, guid: 10e13900fcf5f9f47b3c074c3bafcc19,
     type: 2}

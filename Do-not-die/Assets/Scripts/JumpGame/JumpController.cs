@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class JumpController : MonoBehaviour {
     
-    public float scrollSpeed = -7f;
+    public float scrollSpeed = -10f;
     public GameObject Main;
     float Timerstart = 0f;
     float Timer = 100;
@@ -27,11 +27,13 @@ public class JumpController : MonoBehaviour {
         if (diff < 5)
         {
             Timerstart = 5f;
+        }else if (diff > 10)
+        {
+            scrollSpeed = -20f;
         }
         else
         {
-            Timerstart = 3f;
-            scrollSpeed = -20f;
+            scrollSpeed = -15f;
         }
 
         Timer = Timerstart;
@@ -40,9 +42,7 @@ public class JumpController : MonoBehaviour {
     public void ScoreChange()
     {
         scoreCheck++;
-        Debug.Log(scoreCheck);
         if (scoreCheck > 3) {
-            Debug.Log("win");
             Main.GetComponent<MainController>().LoadScene();
         }
     }
