@@ -11,6 +11,8 @@ public class SpinnerRotate : MonoBehaviour {
     private float angle = 0.0f;
     private int score;
 
+    public GameObject SpinningMain;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -34,6 +36,10 @@ public class SpinnerRotate : MonoBehaviour {
             if (score < Mathf.RoundToInt((angleCounter - (angleCounter % 360)) / 360))
             {
                 Debug.Log(score);
+                if(score == 5)
+                {
+                    SpinningMain.GetComponent<SpinningController>().winTheGame();
+                }
             }
             score = Mathf.RoundToInt((angleCounter - (angleCounter % 360)) / 360);
             startPoint = mouseScreenPosition;
