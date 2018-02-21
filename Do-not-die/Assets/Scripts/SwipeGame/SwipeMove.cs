@@ -22,6 +22,6 @@ public class SwipeMove : MonoBehaviour {
             desiredPosition += Vector3.right*2;
       
 
-        player.transform.position = Vector3.MoveTowards(player.transform.position, desiredPosition, 6f * Time.deltaTime);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, desiredPosition, 9f * Time.deltaTime);
 	}
 }
