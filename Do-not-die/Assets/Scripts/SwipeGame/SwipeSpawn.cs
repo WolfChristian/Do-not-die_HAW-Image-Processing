@@ -27,7 +27,8 @@ public class SwipeSpawn : MonoBehaviour {
         }
         else
         {
-            timerStart = 0.3f;
+            timerStart = 0.5f;
+            this.gameObject.transform.localScale += new Vector3(0.1F, 0, 0);
         }
         timer = timerStart;
 
