@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 450
   fallMultiplier: 3
-  JumpMain: {fileID: 0}
+  JumpMain: {fileID: 2047107817}
 --- !u!50 &942580653
 Rigidbody2D:
   serializedVersion: 4
@@ -792,6 +792,11 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114365614894044060, guid: 89d8ccb82b05b644c8cf259025ff3ee7,
+        type: 2}
+      propertyPath: JumpMain
+      value: 
+      objectReference: {fileID: 2047107817}
     m_RemovedComponents:
     - {fileID: 114960322951525662, guid: 89d8ccb82b05b644c8cf259025ff3ee7, type: 2}
     - {fileID: 0}
