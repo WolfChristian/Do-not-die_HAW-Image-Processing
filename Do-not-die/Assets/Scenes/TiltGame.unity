@@ -828,7 +828,7 @@ MonoBehaviour:
   Main: {fileID: 0}
   Slider: {fileID: 0}
   level1: {fileID: 1479813785014066, guid: 58ae429fd0f90e947bf2d4126d394ad1, type: 2}
-  level2: {fileID: 1878691259924612, guid: 0dd8f2b49a9c4b149a94802909e7a4ca, type: 2}
+  level2: {fileID: 1540278092605978, guid: 0dd8f2b49a9c4b149a94802909e7a4ca, type: 2}
   level3: {fileID: 1886163121751472, guid: 1956b6f0a79935e4a8cfc371e46d485d, type: 2}
 --- !u!1 &1856839446
 GameObject:

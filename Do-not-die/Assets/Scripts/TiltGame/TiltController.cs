@@ -43,7 +43,7 @@ public class TiltController : MonoBehaviour {
                 Instantiate(level1, new Vector3(2.166283f, 0.5105593f, 0), Quaternion.identity);
             }
         }
-
+        Slider.GetComponent<Slider>().maxValue = Timer;
 
     }
 
