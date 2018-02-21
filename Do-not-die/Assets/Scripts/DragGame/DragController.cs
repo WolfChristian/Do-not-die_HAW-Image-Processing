@@ -69,9 +69,7 @@ public class DragController : MonoBehaviour
         Main.GetComponent<MainController>().loselife();
 
     }
-    public void spawnObject() {
-        Instantiate(item1, new Vector3(0, 0, 0), Quaternion.identity);
-    }
+    
     public void Shuffle(List<Vector2> alpha) {
         for (int i = 0; i < alpha.Count; i++)
         {
