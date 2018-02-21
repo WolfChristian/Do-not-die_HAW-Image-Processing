@@ -8,7 +8,8 @@ public class MainController : MonoBehaviour {
     public int difficulty = 0;
     public int life = 3;
     public GameObject gameUI;
-
+    private int lastLevel=0;
+    private int lastLevel2 = 0;
     //When loading
     private void Awake() {
         DontDestroyOnLoad(this);
@@ -26,10 +27,19 @@ public class MainController : MonoBehaviour {
 
     public void LoadScene()
     {
+        
         int rand = Random.Range(2, 9);
-        SceneManager.LoadScene(rand);
-        difficulty++;
 
+        while (rand == lastLevel||rand ==lastLevel2) {
+            rand = Random.Range(2, 9);
+        }
+            lastLevel2 = lastLevel;
+            lastLevel = rand;
+            
+            SceneManager.LoadScene(rand);
+            difficulty++;
+            
+        
 
     }
     //Lose 1 life update UI calls checklife
@@ -51,6 +61,7 @@ public class MainController : MonoBehaviour {
             LoadScene();
         }
     }
+    
     
 
 }

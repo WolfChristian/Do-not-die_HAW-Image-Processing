@@ -151,6 +151,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4171800895940006, guid: c2a2f438ff2457d499273b2022d5ee94, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171800895940006, guid: c2a2f438ff2457d499273b2022d5ee94, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2a2f438ff2457d499273b2022d5ee94, type: 2}
   m_IsPrefabParent: 0
@@ -366,6 +374,14 @@ Prefab:
       propertyPath: dragController
       value: 
       objectReference: {fileID: 1835063951}
+    - target: {fileID: 61834272257249430, guid: 011a8b0f712b16e4e9306bca415a127c,
+        type: 2}
+      propertyPath: m_Offset.y
+      objectReference: {fileID: 0}
+    - target: {fileID: 61834272257249430, guid: 011a8b0f712b16e4e9306bca415a127c,
+        type: 2}
+      propertyPath: m_Size.y
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 011a8b0f712b16e4e9306bca415a127c, type: 2}
   m_IsPrefabParent: 0
@@ -408,6 +424,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4977745327648810, guid: b5665894ca6619545ba168532bf71514, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977745327648810, guid: b5665894ca6619545ba168532bf71514, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5665894ca6619545ba168532bf71514, type: 2}
   m_IsPrefabParent: 0
@@ -449,6 +473,14 @@ Prefab:
     - target: {fileID: 4015267822479766, guid: 895158ec9678d604392037832df5a4e2, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015267822479766, guid: 895158ec9678d604392037832df5a4e2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015267822479766, guid: 895158ec9678d604392037832df5a4e2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 895158ec9678d604392037832df5a4e2, type: 2}
@@ -754,6 +786,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4294475857742998, guid: 6080c040eb484914abe02b0321e56c78, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294475857742998, guid: 6080c040eb484914abe02b0321e56c78, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6080c040eb484914abe02b0321e56c78, type: 2}
   m_IsPrefabParent: 0
@@ -845,6 +885,14 @@ Prefab:
       propertyPath: dragController
       value: 
       objectReference: {fileID: 1835063951}
+    - target: {fileID: 61867333448755122, guid: 42cc5f5ace643f44ab918b463d342d14,
+        type: 2}
+      propertyPath: m_Offset.y
+      objectReference: {fileID: 0}
+    - target: {fileID: 61867333448755122, guid: 42cc5f5ace643f44ab918b463d342d14,
+        type: 2}
+      propertyPath: m_Size.y
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42cc5f5ace643f44ab918b463d342d14, type: 2}
   m_IsPrefabParent: 0
