@@ -43,6 +43,7 @@ public class JumpController : MonoBehaviour {
         Debug.Log(scoreCheck);
         if (scoreCheck > 3) {
             Debug.Log("win");
+            Main.GetComponent<MainController>().LoadScene();
         }
     }
     public void loseTheGame()
@@ -58,7 +59,7 @@ public class JumpController : MonoBehaviour {
 
         if (Timer < 0)
         {
-            Main.GetComponent<MainController>().LoadScene();
+            //Main.GetComponent<MainController>().LoadScene();
         }
     }
 }

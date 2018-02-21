@@ -9,6 +9,7 @@ public class SpinningController : MonoBehaviour
     float Timerstart = 0f;
     float Timer = 100;
     public GameObject Slider;
+    private int score = 0;
 
     int diff;
 
@@ -37,6 +38,7 @@ public class SpinningController : MonoBehaviour
 
     public void winTheGame()
     {
+
         Main.GetComponent<MainController>().LoadScene();
     }
 

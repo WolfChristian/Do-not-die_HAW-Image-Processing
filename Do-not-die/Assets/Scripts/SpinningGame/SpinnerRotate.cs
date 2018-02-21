@@ -9,7 +9,7 @@ public class SpinnerRotate : MonoBehaviour {
     private Vector2 startPoint;
     private float angleCounter = 0.0f;
     private float angle = 0.0f;
-    private int score;
+    private int score = 0;
 
     public GameObject SpinningMain;
 
@@ -36,7 +36,7 @@ public class SpinnerRotate : MonoBehaviour {
             if (score < Mathf.RoundToInt((angleCounter - (angleCounter % 360)) / 360))
             {
                 Debug.Log(score);
-                if(score == 5)
+                if(score >= 5)
                 {
                     SpinningMain.GetComponent<SpinningController>().winTheGame();
                 }
