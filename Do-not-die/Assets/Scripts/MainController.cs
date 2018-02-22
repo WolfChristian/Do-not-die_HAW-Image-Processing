@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class MainController : MonoBehaviour {
     public GameObject gameUI;
     private int lastLevel=0;
     private int lastLevel2 = 0;
+    public int rand;
     //When loading
     private void Awake() {
         DontDestroyOnLoad(this);
@@ -28,20 +30,28 @@ public class MainController : MonoBehaviour {
     public void LoadScene()
     {
         
-        int rand = Random.Range(2, 9);
+        rand = UnityEngine.Random.Range(3, 10);
 
         while (rand == lastLevel||rand ==lastLevel2) {
-            rand = Random.Range(2, 9);
+            rand = UnityEngine.Random.Range(3, 10);
         }
             lastLevel2 = lastLevel;
             lastLevel = rand;
             
-            SceneManager.LoadScene(rand);
+            SceneManager.LoadScene(2);
             difficulty++;
+            StartCoroutine(LevelChange());
             
         
 
     }
+
+    private IEnumerator LevelChange()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(rand);
+    }
+
     //Lose 1 life update UI calls checklife
     public void loselife() {
         life--;
