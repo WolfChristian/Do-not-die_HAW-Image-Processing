@@ -9,6 +9,7 @@ public class MainController : MonoBehaviour {
     public int difficulty = 0;
     public int life = 3;
     public GameObject gameUI;
+    public GameObject timeBar;
     private int lastLevel=0;
     private int lastLevel2 = 0;
     public int rand;
@@ -41,7 +42,9 @@ public class MainController : MonoBehaviour {
             SceneManager.LoadScene(2);
             difficulty++;
             StartCoroutine(LevelChange());
-            
+            gameUI.SetActive(false);
+            timeBar.transform.localScale = new Vector3(0, 0, 0);
+           
         
 
     }
@@ -49,7 +52,14 @@ public class MainController : MonoBehaviour {
     private IEnumerator LevelChange()
     {
         yield return new WaitForSeconds(3f);
+        gameUI.SetActive(true);
         SceneManager.LoadScene(rand);
+        yield return new WaitForSeconds(0.15f);
+        timeBar.transform.localScale = new Vector3(1, 1, 1);
+
+
+
+
     }
 
     //Lose 1 life update UI calls checklife
