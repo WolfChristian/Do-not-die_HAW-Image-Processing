@@ -12,7 +12,7 @@ public class MainController : MonoBehaviour {
     public GameObject timeBar;
     private int lastLevel=0;
     private int lastLevel2 = 0;
-    private int rand;
+    public int rand;
     //Prevents the MainController and the UI to be destroyed on change of levels
     private void Awake() {
         DontDestroyOnLoad(this);
