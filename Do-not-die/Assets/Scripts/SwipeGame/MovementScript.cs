@@ -7,7 +7,8 @@ public class MovementScript : MonoBehaviour {
 
 
     private float Timer;
-	// Use this for initialization
+	
+    // Use this for initialization
 	void Start () {
         Timer = 10;
 	}

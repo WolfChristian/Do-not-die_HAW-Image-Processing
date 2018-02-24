@@ -8,8 +8,8 @@ public class MemoryController : MonoBehaviour
 {
 
 
-    public bool firstClick = false;
-    public bool secondClick = false;
+    private bool firstClick = false;
+    private bool secondClick = false;
     public List<GameObject> tappedTiles;
     private int points = 0;
     [SerializeField] private GameObject g1, g2, g3, g4, g5, g6; // Prefab references.
@@ -23,6 +23,32 @@ public class MemoryController : MonoBehaviour
     private GameObject n1, n2, n3, n4, n5, n6; // Usable tiles for script.
     private GameObject[] usableGameTiles;
     private int j = 0;
+
+    public bool FirstClick
+    {
+        get
+        {
+            return firstClick;
+        }
+
+        set
+        {
+            firstClick = value;
+        }
+    }
+
+    public bool SecondClick
+    {
+        get
+        {
+            return secondClick;
+        }
+
+        set
+        {
+            secondClick = value;
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -97,18 +123,18 @@ public class MemoryController : MonoBehaviour
 
         // Checks if the second tile was clicked and if the tiles have the same type. When they have the same type, the tiles are deleted, a point is added and the user can click again 
         //When they are not the same, the pictures will vanish and the user can click again
-        if (secondClick == true)
+        if (SecondClick == true)
         {
-            if (tappedTiles[0].GetComponent<OnClick>().type == tappedTiles[1].GetComponent<OnClick>().type)
+            if (tappedTiles[0].GetComponent<OnClick>().Type == tappedTiles[1].GetComponent<OnClick>().Type)
             {
                 foreach (GameObject news in usableGameTiles)
                 {
-                    news.GetComponent<OnClick>().canBeClicked = false;
+                    news.GetComponent<OnClick>().CanBeClicked = false;
                 }
 
 
-                firstClick = false;
-                secondClick = false;
+                FirstClick = false;
+                SecondClick = false;
 
                 StartCoroutine(RightPair());
 
@@ -117,10 +143,10 @@ public class MemoryController : MonoBehaviour
             {
                 foreach (GameObject news in usableGameTiles)
                 {
-                    news.GetComponent<OnClick>().canBeClicked = false;
+                    news.GetComponent<OnClick>().CanBeClicked = false;
                 }
-                firstClick = false;
-                secondClick = false;
+                FirstClick = false;
+                SecondClick = false;
                 StartCoroutine(WrongPair());
             }
 
@@ -144,14 +170,14 @@ public class MemoryController : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        tappedTiles[0].GetComponent<OnClick>().canBeClicked = true;
-        tappedTiles[1].GetComponent<OnClick>().canBeClicked = true;
+        tappedTiles[0].GetComponent<OnClick>().CanBeClicked = true;
+        tappedTiles[1].GetComponent<OnClick>().CanBeClicked = true;
         tappedTiles[0].transform.GetChild(0).gameObject.SetActive(false);
         tappedTiles[1].transform.GetChild(0).gameObject.SetActive(false);
         tappedTiles.Clear();
         foreach (GameObject news in usableGameTiles)
         {
-            news.GetComponent<OnClick>().canBeClicked = true;
+            news.GetComponent<OnClick>().CanBeClicked = true;
         }
 
     }
@@ -168,7 +194,7 @@ public class MemoryController : MonoBehaviour
         points++;
         foreach (GameObject news in usableGameTiles)
         {
-            news.GetComponent<OnClick>().canBeClicked = true;
+            news.GetComponent<OnClick>().CanBeClicked = true;
         }
 
     }

@@ -7,10 +7,74 @@ public class Swipe : MonoBehaviour
 {
 
     [SerializeField] private GameObject Ui;
-    public bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
+    private bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
     private Vector2 startTouch, swipeDelta;
     private bool isDraging = false;
 
+    public bool Tap
+    {
+        get
+        {
+            return tap;
+        }
+
+        set
+        {
+            tap = value;
+        }
+    }
+
+    public bool SwipeLeft
+    {
+        get
+        {
+            return swipeLeft;
+        }
+
+        set
+        {
+            swipeLeft = value;
+        }
+    }
+
+    public bool SwipeRight
+    {
+        get
+        {
+            return swipeRight;
+        }
+
+        set
+        {
+            swipeRight = value;
+        }
+    }
+
+    public bool SwipeUp
+    {
+        get
+        {
+            return swipeUp;
+        }
+
+        set
+        {
+            swipeUp = value;
+        }
+    }
+
+    public bool SwipeDown
+    {
+        get
+        {
+            return swipeDown;
+        }
+
+        set
+        {
+            swipeDown = value;
+        }
+    }
 
     private void Start()
     {
@@ -20,12 +84,12 @@ public class Swipe : MonoBehaviour
     private void FixedUpdate()
     {
         // Reset all values to not fire them off multiple times
-        tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
+        Tap = SwipeLeft = SwipeRight = SwipeUp = SwipeDown = false;
 
         // Save tap for mouse control (Only editor)
         if (Input.GetMouseButtonDown(0))
         {
-            tap = true;
+            Tap = true;
             isDraging = true;
             startTouch = Input.mousePosition;
         }
@@ -40,7 +104,7 @@ public class Swipe : MonoBehaviour
         {
             if (Input.touches[0].phase == TouchPhase.Began)
             {
-                tap = true;
+                Tap = true;
                 isDraging = true;
                 startTouch = Input.touches[0].position;
             }
@@ -77,9 +141,9 @@ public class Swipe : MonoBehaviour
             {
                 // Left or right
                 if (x < 0)
-                    swipeLeft = true;
+                    SwipeLeft = true;
                 else
-                    swipeRight = true;
+                    SwipeRight = true;
             }
             else
             {
@@ -87,10 +151,10 @@ public class Swipe : MonoBehaviour
                 if (y < 0)
                 {
                     Debug.Log("Down!!");
-                    swipeDown = true;
+                    SwipeDown = true;
                 }
                 else
-                    swipeUp = true;
+                    SwipeUp = true;
             }
 
             Reset();

@@ -13,21 +13,34 @@ public class SwipeController : MonoBehaviour {
     [SerializeField] private GameObject cube;
     [SerializeField] private GameObject swipeSpawn;
     
-    public int diff;
-    
+    private int diff;
+
+    public int Diff
+    {
+        get
+        {
+            return diff;
+        }
+
+        set
+        {
+            diff = value;
+        }
+    }
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         main = GameObject.Find("MainController");
         slider = GameObject.Find("TimeBar");
         
        // set game difficulty
-        diff = main.GetComponent<MainController>().difficulty;
-        if(diff < 5)
+        Diff = main.GetComponent<MainController>().difficulty;
+        if(Diff < 5)
         {
             timerstart = 5f;
             
         }
-        else if(diff < 10)
+        else if(Diff < 10)
         {
             timerstart = 8f;
             

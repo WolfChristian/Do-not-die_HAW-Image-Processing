@@ -7,6 +7,8 @@ public class CubeCollision : MonoBehaviour {
 
     public bool trigger = false;
 
+   
+
     //Destroy meteorite on collision
     void OnTriggerEnter(Collider collision)
     {

@@ -18,11 +18,11 @@ public class SwipeMove : MonoBehaviour {
     void FixedUpdate () {
 
         // Move left
-        if (swipeControls.swipeLeft && player.position.x > -3)
+        if (swipeControls.SwipeLeft && player.position.x > -3)
             desiredPosition += Vector3.left*2;
 
         // Move right
-        if (swipeControls.swipeRight && player.position.x < 3)
+        if (swipeControls.SwipeRight && player.position.x < 3)
             desiredPosition += Vector3.right*2;
       
         // Fire movement
