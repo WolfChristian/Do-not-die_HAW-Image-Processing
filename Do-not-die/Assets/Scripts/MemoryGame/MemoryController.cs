@@ -19,7 +19,7 @@ public class MemoryController : MonoBehaviour
     private float timer;
     private float timerstart;
     private GameObject slider;
-    private List<Vector3> positionList;
+    public List<Vector3> positionList;
     private GameObject n1, n2, n3, n4, n5, n6; // Usable tiles for script.
     public GameObject[] usableGameTiles;
     private int j = 0;
