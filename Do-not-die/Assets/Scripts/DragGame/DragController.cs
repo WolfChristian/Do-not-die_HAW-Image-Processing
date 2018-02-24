@@ -12,7 +12,7 @@ public class DragController : MonoBehaviour
     private int diff;
     public int food, recycle=0;
     private  Random rng = new Random();
-    private List<Vector2> positions;
+    public List<Vector2> positions;
     public List<GameObject> items;
     /*Level generation
     *Sets Timer depending on difficulty
