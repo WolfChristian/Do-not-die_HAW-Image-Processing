@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class MoveByTouch : MonoBehaviour {
 
-    public GameObject StartPoint;
-    public GameObject EndPoint;
+    public GameObject Controller;
 
+    private int nameInInt;
     private bool finished = false;
     private bool mouseOver = false;
-
+    private LineRenderer line;
     // Use this for initialization
     void Start () {
-        transform.position = StartPoint.transform.position;
-	}
+        nameInInt = System.Convert.ToInt32(this.gameObject.name);
+        Controller = GameObject.Find("GameController");
+        transform.position = Controller.GetComponent<GameController>().getStartVector(nameInInt);
+
+        line = this.gameObject.AddComponent<LineRenderer>();
+        line.startWidth = 0.5f;
+        line.endWidth = 0.5f;
+        line.positionCount = 2;
+    }
 
     private void OnMouseOver()
     {
@@ -21,13 +28,16 @@ public class MoveByTouch : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "PointB")
+        if (other.gameObject.name == Controller.GetComponent<GameController>().getName(nameInInt))
         {
             finished = true;
             Debug.Log("Hello");
         }
     }
     void FixedUpdate () {
+        line.SetPosition(0, Controller.GetComponent<GameController>().getStartVector(nameInInt));
+        line.SetPosition(1, Controller.GetComponent<GameController>().getMovingPointVector(nameInInt));
+
         if (!finished && mouseOver)
         {
             if (Input.GetMouseButton(0))
@@ -39,13 +49,13 @@ public class MoveByTouch : MonoBehaviour {
             }
             else
             {
-                transform.position = StartPoint.transform.position;
+                transform.position = Controller.GetComponent<GameController>().getStartVector(nameInInt);
                 mouseOver = false;
             }
         }
         else if(finished)
         {
-            transform.position = EndPoint.transform.position;
+            transform.position = Controller.GetComponent<GameController>().getEndVector(nameInInt);
         }
     }
 }
