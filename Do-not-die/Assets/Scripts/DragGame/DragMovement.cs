@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class DragMovement : MonoBehaviour {
     public Rigidbody2D rb;
-    bool moveAllowed = false;
-    float x, y;
-    // Use this for initialization
+    private bool moveAllowed = false;
+    private float x, y;
+    //Get the Rigidbody2d component of the object
     void Start () {
         rb = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    /*
+     * Checks if the GameObject was touched and moves it according to the movement of the input. 
+     */
+    void FixedUpdate () {
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
 
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
             switch (touch.phase) {
-
+                //If the object is touched you are able to move it
                 case TouchPhase.Began:
 
                     if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
@@ -36,12 +38,14 @@ public class DragMovement : MonoBehaviour {
 
                     }
                     break;
+               //While movemen is allowed set the position of the object to new position of the touch input
                 case TouchPhase.Moved:
                     if (moveAllowed)
                     {
                         rb.MovePosition(new Vector2(touchPos.x - x, touchPos.y - y));
                     }
                     break;
+                //If the touch input ends objects is not allowed to move again
                 case TouchPhase.Ended:
                     moveAllowed = false;
                     rb.freezeRotation = false;

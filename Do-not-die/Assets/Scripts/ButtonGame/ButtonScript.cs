@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonScript : MonoBehaviour {
-    public GameObject Main;
-    // Use this for initialization
+    private GameObject Main;
+    //Searches for the MainController
     void Start () {
         Main = GameObject.Find("MainController");
     }
 
-    //Wins game 
+    //Wins game if you push the button 
     public void winGame()
     {
         Main.GetComponent<MainController>().LoadScene();
     }
-    //Loses Game
+    //Loses game if you push the button
     public void loseGame()
     {
-
         Main.GetComponent<MainController>().loselife();
-
     }
 }

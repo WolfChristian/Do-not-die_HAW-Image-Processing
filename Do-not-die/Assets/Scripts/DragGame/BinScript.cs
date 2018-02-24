@@ -6,19 +6,15 @@ public class BinScript : MonoBehaviour {
     //Sets either Food or Recyclebnin
     public int mode;
     public GameObject dragController;
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    /*If an object enters the bin depending on its tag and the 
+     *mode of the bin either add one the Food/Recycle-counter or lose the game.  
+     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (mode) {
-            case 1:
+        //Mode for foodbin
+        case 1:
             if (collision.tag == "Food") {
                     dragController.GetComponent<DragController>().food++;
             }
@@ -26,6 +22,7 @@ public class BinScript : MonoBehaviour {
                     dragController.GetComponent<DragController>().loseGame();
                 }
                 break;
+        //Mode for recyclebin
         case 2:
                 if (collision.tag == "Recycle")
                 {
