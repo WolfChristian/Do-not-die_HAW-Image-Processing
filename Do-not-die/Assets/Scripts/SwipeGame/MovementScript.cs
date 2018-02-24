@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The MovementScript moves the meteorites.
 public class MovementScript : MonoBehaviour {
 
 
@@ -14,8 +15,11 @@ public class MovementScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Timer = Timer - Time.deltaTime;
+        
+        // Move the meteorite; 
         transform.Translate(Vector3.down * Time.deltaTime*5);
 
+        // Destroy the meteorite if it is not longer in game view
         if(Timer <= 0)
         {
             Destroy(this.gameObject);

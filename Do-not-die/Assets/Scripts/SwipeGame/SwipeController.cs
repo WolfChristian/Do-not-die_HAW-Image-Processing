@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// The SwipeController sets the difficulty of the game and the win/lose conditions.
 public class SwipeController : MonoBehaviour {
 
-    public GameObject main;
-    float timerstart = 0f;
-    float timer = 100;
-    public GameObject slider;
-    public GameObject cube;
-    public GameObject swipeSpawn;
+    private GameObject main;
+    private float timerstart = 0f;
+    private float timer = 100;
+    private GameObject slider;
+    [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject swipeSpawn;
     
     public int diff;
     
@@ -19,7 +20,7 @@ public class SwipeController : MonoBehaviour {
         main = GameObject.Find("MainController");
         slider = GameObject.Find("TimeBar");
         
-       
+       // set game difficulty
         diff = main.GetComponent<MainController>().difficulty;
         if(diff < 5)
         {
@@ -44,13 +45,15 @@ public class SwipeController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if(cube.GetComponent<CubeCollision>().Trigger.Equals(true))
+        // lose the game if the player character collides with a meteorite
+        if (cube.GetComponent<CubeCollision>().trigger.Equals(true))
         {
             main.GetComponent<MainController>().loselife();
         }
         timer = timer - Time.deltaTime;
         slider.GetComponent<Slider>().value = timer;
 
+        // win the game when the time is over
         if(timer < 0)
         {
             main.GetComponent<MainController>().LoadScene();

@@ -3,43 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CrossingController : MonoBehaviour {
-    public Text gamerule;
-    public Text difficulty;
-    public Text life;
 
-    public GameObject mainController;
+// The CrossingController will change and show the text in the Crossingscreen between the games depending of which game will come next.
+public class CrossingController : MonoBehaviour
+{
+    [SerializeField] private Text gamerule;
+    [SerializeField] private Text difficulty;
+    [SerializeField] private Text life;
 
-    public string[] ruleTexts = new string[] {"Wische nach links und rechts und weiche den Meteoriten aus!","Befolge den Anweisungen auf dem Bildschirm!","Finde die gleichen Memory-Teile!",
-        "Neige dein Smartphone, um die Kugel ins Ziel zu befördern!","Drücke auf den Bildschirm, um über die Hindernisse zu springen!","Drehe die Fläche fünf mal!","Ziehe den Müll in die richtigen Tonnen!" };
+    private GameObject mainController;
+
+    private string[] ruleTexts = new string[] {"Swipe left and right and dodge the meteors!","Follow the instructions on the screen!","Find the same memory tiles!",
+        "Tilt your smartphone to move the ball into the goal zone!","Press the screen to jump over the obstacles!","Spin the Disc!","Drag the trash into the right containers!" };
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         mainController = GameObject.Find("MainController");
-        
-        //Schwierigkeitstext
+
+        // Changing of Difficultytext
 
         int diff = mainController.GetComponent<MainController>().difficulty;
-        if(diff < 5)
+        if (diff < 5)
         {
-            difficulty.text = "Schwierigkeitsstufe: 1";
+            difficulty.text = "Difficulty level: 1";
         }
-        else if(diff < 10)
+        else if (diff < 10)
         {
-            difficulty.text = "Schwierigkeitsstufe: 2";
+            difficulty.text = "Difficulty level: 2";
         }
         else
         {
-            difficulty.text = "Schwierigkeitsstufe: 3";
+            difficulty.text = "Difficulty level: 3";
         }
 
-        // Lebenstext
+        // Changing of Lifetext
 
         int lifeCount = mainController.GetComponent<MainController>().life;
-        life.text = "Du hast noch " + lifeCount + " Leben";
+        life.text = "You have " + lifeCount + "life(s) left";
 
-        //Regeltext
+        // Changing of Ruletext
 
         int nextLevel = mainController.GetComponent<MainController>().rand;
         switch (nextLevel)
@@ -66,15 +70,6 @@ public class CrossingController : MonoBehaviour {
                 gamerule.text = ruleTexts[6];
                 break;
         }
+    }
 
-
-
-        
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -2,30 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// CubeCollision destroys the meteorite after the collision
 public class CubeCollision : MonoBehaviour {
 
-    private bool trigger = false;
+    public bool trigger = false;
 
-    public bool Trigger
-    {
-        get
-        {
-            return trigger;
-        }
-    }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
-    private void OnTriggerEnter(Collider collision)
+    //Destroy meteorite on collision
+    void OnTriggerEnter(Collider collision)
     {
         trigger = true;
         Destroy(collision.gameObject);

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The SwipeMove class moves the player character on swipes.
 public class SwipeMove : MonoBehaviour {
 
-    public Swipe swipeControls;
-    public Transform player;
+    [SerializeField] private Swipe swipeControls;
+    [SerializeField] private Transform player;
     private Vector3 desiredPosition;
 
     private void Start()
@@ -16,12 +17,15 @@ public class SwipeMove : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
 
-        if (swipeControls.SwipeLeft && player.position.x > -3)
+        // Move left
+        if (swipeControls.swipeLeft && player.position.x > -3)
             desiredPosition += Vector3.left*2;
-        if (swipeControls.SwipeRight && player.position.x < 3)
+
+        // Move right
+        if (swipeControls.swipeRight && player.position.x < 3)
             desiredPosition += Vector3.right*2;
       
-
+        // Fire movement
         player.transform.position = Vector3.MoveTowards(player.transform.position, desiredPosition, 9f * Time.deltaTime);
 	}
 }

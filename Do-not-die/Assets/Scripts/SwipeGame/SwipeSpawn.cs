@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The SwipeSpawn class spawns the meteorites.
 public class SwipeSpawn : MonoBehaviour {
 
-    public GameObject spawnObject;
+    [SerializeField] private GameObject spawnObject;
     private float timer;
-    public float timerStart;
+    private float timerStart;
     private int diff;
-    public GameObject main;
+    private GameObject main;
+   
     // Use this for initialization
     void Start () {
         
         main = GameObject.Find("MainController");
         diff = main.GetComponent<MainController>().difficulty;
 
+        // Control difficulty changes
         if (diff < 5)
         {
             timerStart = 1f;
@@ -40,6 +43,7 @@ public class SwipeSpawn : MonoBehaviour {
     void FixedUpdate () {
         timer = timer - Time.deltaTime;
 
+        // Spawn meteorite if timer has run out
         if(timer <= 0)
         {
             timer = timerStart;
