@@ -6,25 +6,18 @@ using UnityEngine;
 public class UIScript : MonoBehaviour {
 
     public Image heart1, heart2, heart3;
-    public GameObject Main;
+    private GameObject Main;
     private int health;
 
-    // Use this for initialization
+    // Finds the MainController and gets the initial lifecount
     void Start () {
         Main = GameObject.Find("MainController");
-        health = Main.GetComponent<MainController>().life;
-        
+        health = Main.GetComponent<MainController>().life;       
     }
 	
-	
-	void fixUpdate () {
-        
-		
-	}
-    public void updateLife()
-    {
+	//Checks the lifecounter of the MainController and shows depending on the value a certain number of hearts.
+    public void updateLife(){
         health = Main.GetComponent<MainController>().life;
-        Debug.Log(health);
         switch (health)
         {
             case 3:
