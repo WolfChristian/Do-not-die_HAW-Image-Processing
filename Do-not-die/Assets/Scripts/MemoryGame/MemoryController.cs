@@ -14,14 +14,14 @@ public class MemoryController : MonoBehaviour
     private int points = 0;
     [SerializeField] private GameObject g1, g2, g3, g4, g5, g6; // Prefab references.
     private GameObject main;
-    private List<GameObject> spawnMemoryFields;
+    public List<GameObject> spawnMemoryFields;
     private int diff;
     private float timer;
     private float timerstart;
     private GameObject slider;
     private List<Vector3> positionList;
     private GameObject n1, n2, n3, n4, n5, n6; // Usable tiles for script.
-    private GameObject[] usableGameTiles;
+    public GameObject[] usableGameTiles;
     private int j = 0;
 
     public bool FirstClick
