@@ -138,8 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  memoryController: {fileID: 0}
-  canBeClicked: 1
 --- !u!212 &212862838946660588
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 //The OnClick class messages the MemoryController if the connected tile was clicked.
 public class OnClick : MonoBehaviour {
 
-    private int type; 
+    [SerializeField] private int type; 
     private GameObject memoryController;
     private bool canBeClicked = true;
 
