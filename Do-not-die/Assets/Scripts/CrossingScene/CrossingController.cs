@@ -14,7 +14,7 @@ public class CrossingController : MonoBehaviour
     private GameObject mainController;
 
     private string[] ruleTexts = new string[] {"Swipe left and right and dodge the meteors!","Follow the instructions on the screen!","Find the same memory tiles!",
-        "Tilt your smartphone to move the ball into the goal zone!","Press the screen to jump over the obstacles!","Spin the Disc!","Drag the trash into the right containers!" };
+        "Tilt your smartphone to move the ball into the goal zone!","Press the screen to jump over the obstacles!","Spin the Disc!","Drag the trash into the right containers!","Connect the dots!" };
 
 
     // Use this for initialization
@@ -68,6 +68,9 @@ public class CrossingController : MonoBehaviour
                 break;
             case 9:
                 gamerule.text = ruleTexts[6];
+                break;
+            case 10:
+                gamerule.text = ruleTexts[7];
                 break;
         }
     }
