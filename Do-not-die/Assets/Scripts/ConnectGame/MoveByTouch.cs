@@ -6,6 +6,7 @@ public class MoveByTouch : MonoBehaviour {
 
     public GameObject Controller;
 
+    private bool activ = false;
     private int nameInInt;
     private bool finished = false;
     private bool mouseOver = false;
@@ -38,9 +39,11 @@ public class MoveByTouch : MonoBehaviour {
         line.SetPosition(0, Controller.GetComponent<GameController>().getStartVector(nameInInt));
         line.SetPosition(1, Controller.GetComponent<GameController>().getMovingPointVector(nameInInt));
 
-        if (!finished && mouseOver)
+        if (!finished && mouseOver && Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButton(0))
+            activ = true;
+        }
+            if (Input.GetMouseButton(0) && activ)
             {
                 var pos = Input.mousePosition;
                 pos.z = 45;
@@ -51,9 +54,10 @@ public class MoveByTouch : MonoBehaviour {
             {
                 transform.position = Controller.GetComponent<GameController>().getStartVector(nameInInt);
                 mouseOver = false;
+                activ = false;
             }
-        }
-        else if(finished)
+        
+        if(finished)
         {
             transform.position = Controller.GetComponent<GameController>().getEndVector(nameInInt);
         }

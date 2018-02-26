@@ -22,10 +22,10 @@ public class MainController : MonoBehaviour {
     //Loads new random level but not the same as before.
     //Increases the difficulty by one.
     public void LoadScene(){       
-        rand = UnityEngine.Random.Range(3, 10);
+        rand = UnityEngine.Random.Range(3, 11);
 
         while (rand == lastLevel||rand ==lastLevel2) {
-            rand = UnityEngine.Random.Range(3, 10);
+            rand = UnityEngine.Random.Range(3, 11);
         }
             lastLevel2 = lastLevel;
             lastLevel = rand;            
