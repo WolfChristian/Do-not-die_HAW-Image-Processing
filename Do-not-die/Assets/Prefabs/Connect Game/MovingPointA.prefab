@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50963198568116304}
   - component: {fileID: 58057713362362874}
   - component: {fileID: 114180444806633316}
+  - component: {fileID: 114821557564526862}
   m_Layer: 0
   m_Name: MovingPointA
   m_TagString: Untagged
@@ -87,6 +88,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4944fafd06a3d6843ac226cd9e3157b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+--- !u!114 &114821557564526862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750437044610714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef2d8c978b91444fbef742b5f248aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}

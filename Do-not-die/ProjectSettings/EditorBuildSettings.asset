@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DragGame.unity
     guid: b2dbfb1356b5c9a49a168db8174482ea
+  - enabled: 1
+    path: Assets/Scenes/ConnectGame.unity
+    guid: 0cc69cffc84d1264881723f9d582ed89
