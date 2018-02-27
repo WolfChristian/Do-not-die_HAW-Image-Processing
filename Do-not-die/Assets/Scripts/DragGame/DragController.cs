@@ -43,9 +43,14 @@ public class DragController : MonoBehaviour
         if (diff < 5) {
             Timer = 8f;
         }
-        else
+        else if(diff>5&&diff<10)
         {
             Timer = 7f;
+        }
+        else
+        {
+            Timer = 6f;
+
         }
         Slider.GetComponent<Slider>().maxValue = Timer;
     }

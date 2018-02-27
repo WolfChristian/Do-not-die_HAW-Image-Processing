@@ -8,7 +8,7 @@ public class GameOverController : MonoBehaviour {
     public GameObject Main;
     public Text score;
     private int diff = 0;
-    // Use this for initialization
+    // Resets the Game by deleting the MainController and GameUI
     void Start () {
         Main = GameObject.Find("MainController");
         diff = Main.GetComponent<MainController>().difficulty;
@@ -17,11 +17,7 @@ public class GameOverController : MonoBehaviour {
         Destroy(Main);
         Destroy(GameObject.Find("GameUI"));
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	//Loads the MainMenu scene
     public void returnToMainMenu() {
         
         SceneManager.LoadScene(0);

@@ -36,9 +36,9 @@ public class ButtonController : MonoBehaviour {
             button.transform.SetParent(canvas.transform,false);
             textfield.text = "Do not press the Red Button";
         }
-        else
+        else if(diff<10&&diff>5)
         {
-            Timer = 3f;
+            Timer = 4f;
             //%30 percent chance to spawn a alternative task
             if (Random.value > 0.3)
             {
@@ -53,6 +53,25 @@ public class ButtonController : MonoBehaviour {
                 button.transform.SetParent(canvas.transform, false);
                 textfield.text = "Do not press the Red Button";
             }
+        }
+        else
+        {
+            Timer = 3f;
+            //50 percent chance to spawn a alternative task
+            if (Random.value > 0.5)
+            {
+                button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
+                button.transform.SetParent(canvas.transform, false);
+                textfield.text = "Do not press the Blue Button";
+                isAlternative = true;
+            }
+            else
+            {
+                button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
+                button.transform.SetParent(canvas.transform, false);
+                textfield.text = "Do press the Green Button";
+            }
+
         }
         
         Slider.GetComponent<Slider>().maxValue = Timer;
