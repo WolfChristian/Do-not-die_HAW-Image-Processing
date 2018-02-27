@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour {
+public class Obstacle : MonoBehaviour
+{
 
     public GameObject JumpMain;
 
-    private void Start()
+    void Start()
     {
         JumpMain = GameObject.Find("GameController");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "JumpMan")
+        if (other.gameObject.name == "JumpMan")
         {
-            JumpMain.GetComponent<JumpController>().ScoreChange();
-            Debug.Log("Hello");
+            JumpMain.GetComponent<JumpController>().ScoreChange(); //changes the score if JumpMan passes
         }
     }
 }

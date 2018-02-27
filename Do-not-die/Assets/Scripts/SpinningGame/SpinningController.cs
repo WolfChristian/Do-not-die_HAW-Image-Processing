@@ -5,50 +5,46 @@ using UnityEngine.UI;
 
 public class SpinningController : MonoBehaviour
 {
-    public GameObject Main;
-    float Timerstart = 0f;
-    float Timer = 100;
-    public GameObject Slider;
+    private GameObject Main;
+    private float Timerstart = 0f;
+    private float Timer = 100;
+    private GameObject Slider;
     private int score = 0;
 
-    int diff;
+    private int diff;
 
-    // Use this for initialization
     void Start()
     {
-
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-
-
         diff = Main.GetComponent<MainController>().difficulty;
-        //diff = 2;
+        //changes the max timer depending on the difficulty
         if (diff < 5)
         {
             Timerstart = 5f;
         }
-        else
+        else if (diff > 10)
         {
             Timerstart = 3f;
+        }
+        else
+        {
+            Timerstart = 4f;
         }
 
         Timer = Timerstart;
         Slider.GetComponent<Slider>().maxValue = Timerstart;
     }
-
-    public void winTheGame()
+    public void winTheGame() //is called by SpinnerRotate after 5 revolutions 
     {
-
         Main.GetComponent<MainController>().LoadScene();
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate() //takes care of the timer and the lose condition
     {
         Timer = Timer - Time.deltaTime;
         Slider.GetComponent<Slider>().value = Timer;
 
-        if (Timer < 0)
+        if (Timer < 0) //lose condition
         {
             Main.GetComponent<MainController>().loselife();
         }

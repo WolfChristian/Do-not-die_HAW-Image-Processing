@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclePool : MonoBehaviour {
+public class ObstaclePool : MonoBehaviour
+{
 
-    public GameObject obstaclePrefab;
-
+    [SerializeField] private GameObject obstaclePrefab;
     private int obstaclePoolSize = 4;
     private float spawnRate = 0.5f;
     private GameObject[] obstacle;
@@ -15,31 +15,32 @@ public class ObstaclePool : MonoBehaviour {
     private int currentObstacle = 0;
 
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        //Spawns the prefabs 
         obstacle = new GameObject[obstaclePoolSize];
-        for (int i = 0; i<obstaclePoolSize; i++)
+        for (int i = 0; i < obstaclePoolSize; i++)
         {
-            obstacle[i] = (GameObject)Instantiate (obstaclePrefab, objectPoolPosition, Quaternion.identity);
+            obstacle[i] = (GameObject)Instantiate(obstaclePrefab, objectPoolPosition, Quaternion.identity);
         }
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    }
+
+
+    void FixedUpdate()
+    { //reposition the obstacles according to the desired time / indicates the distance
         timeSinceLastSpawned += Time.deltaTime;
 
         if (!(currentObstacle >= obstaclePoolSize))
         {
-                if (timeSinceLastSpawned >= spawnRate)
+            if (timeSinceLastSpawned >= spawnRate)
             {
                 float randm = Random.Range(8, 14);
                 spawnRate = (randm / 10);
-                Debug.Log(spawnRate);
                 timeSinceLastSpawned = 0;
                 obstacle[currentObstacle].transform.position = new Vector2(10, spawnYPosition);
                 currentObstacle++;
-   
-            } 
+
+            }
         }
-	}
+    }
 }

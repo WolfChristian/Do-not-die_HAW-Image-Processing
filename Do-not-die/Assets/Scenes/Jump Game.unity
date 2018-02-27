@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635de6a1c9fdc0d45b25347268f49d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -7
+  scrollSpeed: -10
   Main: {fileID: 1028812806466872, guid: 66118b304f32e25439d4f481de79bc80, type: 2}
   Slider: {fileID: 1028812806466872, guid: 66118b304f32e25439d4f481de79bc80, type: 2}
   scoreCheck: 0

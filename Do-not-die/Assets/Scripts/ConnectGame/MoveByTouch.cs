@@ -2,37 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveByTouch : MonoBehaviour {
+public class MoveByTouch : MonoBehaviour
+{
 
     private bool moveAllowed = false;
-    private float x, y;
-
-    public GameObject Controller;
+    private GameObject Controller;
     private bool finished = false;
     private int nameInInt;
     private LineRenderer line;
 
-    //private bool activ = false;
-    //private bool mouseOver = false;
 
-    // Use this for initialization
-    void Start () {
-        transform.localScale *= 2f;
-        nameInInt = System.Convert.ToInt32(this.gameObject.name);
+    void Start()
+    {
+        transform.localScale *= 2f; // changes the size for better visual visibility
+        nameInInt = System.Convert.ToInt32(this.gameObject.name); // nameInInt is used for identifing the prefab
         Controller = GameObject.Find("GameController");
         transform.position = Controller.GetComponent<GameController>().getStartVector(nameInInt);
 
+        //sets the parameters for the LineRender
         line = this.gameObject.AddComponent<LineRenderer>();
         line.startWidth = 0.5f;
         line.endWidth = 0.5f;
         line.positionCount = 2;
     }
 
-    private void OnMouseOver()
-    {
-        //mouseOver = true;
-    }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) //checks for the right connection
     {
         if (other.gameObject.name == Controller.GetComponent<GameController>().getName(nameInInt))
         {
@@ -40,13 +34,17 @@ public class MoveByTouch : MonoBehaviour {
             Controller.GetComponent<GameController>().countConnections();
         }
     }
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
+        //paints the line between the points
         line.SetPosition(0, Controller.GetComponent<GameController>().getStartVector(nameInInt));
         line.SetPosition(1, Controller.GetComponent<GameController>().getMovingPointVector(nameInInt));
-        if(finished)
+
+        if (finished) //if the connection was successful, the input is redirected to this statement
         {
             transform.position = Controller.GetComponent<GameController>().getEndVector(nameInInt);
-        }else
+        }
+        else // if the connection was not successful jet, checks for touch input
         {
             if (Input.touchCount > 0)
             {
