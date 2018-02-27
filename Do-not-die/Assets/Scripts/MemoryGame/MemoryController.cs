@@ -185,13 +185,14 @@ public class MemoryController : MonoBehaviour
     // Subroutine for waiting when right pair was found.
     private IEnumerator RightPair()
     {
+        points++;
         yield return new WaitForSeconds(0.3f);
 
         tappedTiles[0].SetActive(false);
         tappedTiles[1].SetActive(false);
 
         tappedTiles.Clear();
-        points++;
+        
         foreach (GameObject news in usableGameTiles)
         {
             news.GetComponent<OnClick>().CanBeClicked = true;
