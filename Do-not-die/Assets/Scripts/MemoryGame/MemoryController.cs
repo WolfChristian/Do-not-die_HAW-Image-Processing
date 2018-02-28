@@ -93,7 +93,7 @@ public class MemoryController : MonoBehaviour
 
          
         // Control difficulty changes
-        diff = main.GetComponent<MainController>().difficulty;
+        diff = main.GetComponent<MainController>().Difficulty;
         if (diff < 5)
         {
             timerstart = 12f;

@@ -118,7 +118,7 @@ public class Swipe : MonoBehaviour
         // Calculate the distance
 
         swipeDelta = Vector2.zero;
-        if (isDraging && !Ui.GetComponent<PauseMenu>().gameIsPaused)
+        if (isDraging && !Ui.GetComponent<PauseMenu>().GameIsPaused)
         {
             if (Input.touches.Length > 0)
             {

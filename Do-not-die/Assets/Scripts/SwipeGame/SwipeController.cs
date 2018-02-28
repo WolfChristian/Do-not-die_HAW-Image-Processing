@@ -34,7 +34,7 @@ public class SwipeController : MonoBehaviour {
         slider = GameObject.Find("TimeBar");
         
        // set game difficulty
-        Diff = main.GetComponent<MainController>().difficulty;
+        Diff = main.GetComponent<MainController>().Difficulty;
         if(Diff < 5)
         {
             timerstart = 5f;

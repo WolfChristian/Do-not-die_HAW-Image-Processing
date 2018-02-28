@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        diff = Main.GetComponent<MainController>().difficulty;
+        diff = Main.GetComponent<MainController>().Difficulty;
         //changes the max timer and the number of points depending on the difficulty
         if (diff < 5)
         {

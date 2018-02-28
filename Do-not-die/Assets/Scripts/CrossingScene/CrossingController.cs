@@ -24,7 +24,7 @@ public class CrossingController : MonoBehaviour
 
         // Changing of Difficultytext
 
-        int diff = mainController.GetComponent<MainController>().difficulty;
+        int diff = mainController.GetComponent<MainController>().Difficulty;
         if (diff < 5)
         {
             difficulty.text = "Difficulty level: 1";
@@ -40,7 +40,7 @@ public class CrossingController : MonoBehaviour
 
         // Changing of Lifetext
 
-        int lifeCount = mainController.GetComponent<MainController>().life;
+        int lifeCount = mainController.GetComponent<MainController>().Life;
         life.text = "You have " + lifeCount + "life(s) left";
 
         // Changing of Ruletext

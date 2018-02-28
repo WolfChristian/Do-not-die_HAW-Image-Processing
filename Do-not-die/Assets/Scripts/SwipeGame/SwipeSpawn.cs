@@ -15,7 +15,7 @@ public class SwipeSpawn : MonoBehaviour {
     void Start () {
         
         main = GameObject.Find("MainController");
-        diff = main.GetComponent<MainController>().difficulty;
+        diff = main.GetComponent<MainController>().Difficulty;
 
         // Control difficulty changes
         if (diff < 5)

@@ -5,23 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
     //Contains all function for the PauseMenu
-    public bool gameIsPaused = false;
+    private bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
-    
-    
-   
+
+    public bool GameIsPaused
+    {
+        get
+        {
+            return gameIsPaused;
+        }
+
+        set
+        {
+            gameIsPaused = value;
+        }
+    }
+
+
+
     //Resumes the game if it was paused
     public void Resume() {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
-        gameIsPaused = false;
+        GameIsPaused = false;
     }
     //Pauses game 
     public void Pause() {
         
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        gameIsPaused = true;
+        GameIsPaused = true;
 
     }
     //Quits the game and sends you to the GameOverScreen

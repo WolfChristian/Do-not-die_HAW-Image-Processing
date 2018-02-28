@@ -11,9 +11,9 @@ public class GameOverController : MonoBehaviour {
     // Resets the Game by deleting the MainController and GameUI
     void Start () {
         Main = GameObject.Find("MainController");
-        diff = Main.GetComponent<MainController>().difficulty;
+        diff = Main.GetComponent<MainController>().Difficulty;
         score.text="Your Score: "+diff;
-        Main.GetComponent<MainController>().difficulty = 0;
+        Main.GetComponent<MainController>().Difficulty = 0;
         Destroy(Main);
         Destroy(GameObject.Find("GameUI"));
     }

@@ -27,7 +27,7 @@ public class ButtonController : MonoBehaviour {
     void Start () {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        diff = Main.GetComponent<MainController>().difficulty;
+        diff = Main.GetComponent<MainController>().Difficulty;
         
         if (diff < 5)
         {

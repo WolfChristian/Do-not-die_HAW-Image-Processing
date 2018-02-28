@@ -22,7 +22,7 @@ public class DragController : MonoBehaviour
     {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        diff = Main.GetComponent<MainController>().difficulty;
+        diff = Main.GetComponent<MainController>().Difficulty;
         //Adds fixed positions to the list and shuffles them
         positions.Add(new Vector2(-3,0));
         positions.Add(new Vector2(3, 0));

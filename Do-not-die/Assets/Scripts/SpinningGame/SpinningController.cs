@@ -16,7 +16,7 @@ public class SpinningController : MonoBehaviour
     {
         Main = GameObject.Find("MainController");
         Slider = GameObject.Find("TimeBar");
-        diff = Main.GetComponent<MainController>().difficulty;
+        diff = Main.GetComponent<MainController>().Difficulty;
         //changes the max timer depending on the difficulty
         if (diff < 5)
         {
