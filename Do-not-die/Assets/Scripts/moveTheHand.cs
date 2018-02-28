@@ -6,6 +6,7 @@ public class moveTheHand : MonoBehaviour
 {
     private float Timerstart = 1f;
     private float Timer = 100;
+    private float distanceX = 0.9f;
     private Vector3 position1;
     private Vector3 position2;
 
@@ -16,11 +17,11 @@ public class moveTheHand : MonoBehaviour
         position1 = gameObject.transform.position;
         if (position1.x < 0)
         {
-            position2 = gameObject.transform.position + new Vector3(1f, 0f, 0f);
+            position2 = gameObject.transform.position + new Vector3(distanceX, 0f, 0f);
         }
         else
         {
-            position2 = gameObject.transform.position + new Vector3(-1f, 0f, 0f);
+            position2 = gameObject.transform.position + new Vector3((distanceX * -1), 0f, 0f);
         }
     }
 
