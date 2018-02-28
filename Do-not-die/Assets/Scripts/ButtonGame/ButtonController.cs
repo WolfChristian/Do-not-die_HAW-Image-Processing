@@ -34,7 +34,7 @@ public class ButtonController : MonoBehaviour {
             Timer = 5f;
             button =Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
             button.transform.SetParent(canvas.transform,false);
-            textfield.text = "Do not press the Red Button";
+            textfield.text = "Don't push the Red Button";
         }
         else if(diff<10&&diff>5)
         {
@@ -44,32 +44,32 @@ public class ButtonController : MonoBehaviour {
             {
                 button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Do press the Red Button";
+                textfield.text = "Do push the Red Button";
                 isAlternative = true;
             }
             else
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Do not press the Red Button";
+                textfield.text = "Don't push the Red Button";
             }
         }
         else
         {
             Timer = 3f;
-            //50 percent chance to spawn a alternative task
-            if (Random.value > 0.5)
+            //20 percent chance to spawn a alternative task
+            if (Random.value > 0.2)
             {
                 button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Do not press the Blue Button";
-                isAlternative = true;
+                textfield.text = "Do what you want cause a pirate is free!!";
+                
             }
             else
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Do press the Green Button";
+                textfield.text = "Don't push the Red Button";
             }
 
         }
