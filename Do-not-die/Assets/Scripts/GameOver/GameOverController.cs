@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class GameOverController : MonoBehaviour {
-    public GameObject Main;
-    public Text score;
+    private GameObject Main;
+    [SerializeField] private Text score;
     private int diff = 0;
     // Resets the Game by deleting the MainController and GameUI
     void Start () {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class TiltController : MonoBehaviour {
     private GameObject Main;
     private GameObject Slider;
-    public GameObject level1, level2, level3;
+    [SerializeField] private GameObject level1, level2, level3;
     private float Timer = 100;
     private int diff;
 

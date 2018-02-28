@@ -11,10 +11,10 @@ public class ButtonController : MonoBehaviour {
 
     private GameObject Main;
     private GameObject Slider;
-    public Text textfield;
-    public Canvas canvas;
-    public GameObject buttonV1;//Spawnable button 1
-    public GameObject buttonV2;//Spawnable button 2
+    [SerializeField] private Text textfield;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject buttonV1;//Spawnable button 1
+    [SerializeField] private GameObject buttonV2;//Spawnable button 2
     private GameObject button;
     private float Timer = 100;
     private int diff;

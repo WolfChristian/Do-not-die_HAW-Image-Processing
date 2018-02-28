@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BinScript : MonoBehaviour {
-    //Sets either Food or Recyclebnin
-    public int mode;
-    public GameObject dragController;
+    //Sets either Food or Recyclebin
+    [SerializeField] private int mode;
+    [SerializeField] private GameObject dragController;
 	
     /*If an object enters the bin depending on its tag and the 
      *mode of the bin either add one the Food/Recycle-counter or lose the game.  

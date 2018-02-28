@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DragMovement : MonoBehaviour {
-    public Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
     private bool moveAllowed = false;
     private float x, y;
     //Get the Rigidbody2d component of the object

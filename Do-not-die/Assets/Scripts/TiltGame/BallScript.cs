@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour {
 
-    public Rigidbody2D ball;
+    [SerializeField] private Rigidbody2D ball;
     private float moveSpeed = 0.8f;
     private float dirX, dirY;
     //Gets the Rigidbody2D of the ball for the update function

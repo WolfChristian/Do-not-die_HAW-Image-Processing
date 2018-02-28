@@ -7,7 +7,7 @@ public class DragController : MonoBehaviour
 {
     private GameObject Main;
     private GameObject Slider;
-    public GameObject item1, item2, item3, item4;
+    [SerializeField] private GameObject item1, item2, item3, item4;
     private float Timer = 100;
     private int diff;
     public int food, recycle=0;
