@@ -17,6 +17,6 @@ public class ButtonScript : MonoBehaviour {
     //Loses game if you push the button
     public void loseGame()
     {
-        Main.GetComponent<MainController>().loselife();
+        Main.GetComponent<MainController>().Loselife();
     }
 }

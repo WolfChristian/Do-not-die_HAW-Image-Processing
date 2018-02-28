@@ -61,7 +61,7 @@ public class SwipeController : MonoBehaviour {
         // lose the game if the player character collides with a meteorite
         if (cube.GetComponent<CubeCollision>().trigger.Equals(true))
         {
-            main.GetComponent<MainController>().loselife();
+            main.GetComponent<MainController>().Loselife();
         }
         timer = timer - Time.deltaTime;
         slider.GetComponent<Slider>().value = timer;

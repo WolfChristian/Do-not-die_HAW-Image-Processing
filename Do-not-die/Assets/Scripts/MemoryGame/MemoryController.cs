@@ -160,7 +160,7 @@ public class MemoryController : MonoBehaviour
 
         if (timer <= 0)
         {
-            main.GetComponent<MainController>().loselife();
+            main.GetComponent<MainController>().Loselife();
         }
     }
 

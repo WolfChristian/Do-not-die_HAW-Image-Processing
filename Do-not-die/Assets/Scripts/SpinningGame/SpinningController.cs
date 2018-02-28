@@ -46,7 +46,7 @@ public class SpinningController : MonoBehaviour
 
         if (Timer < 0) //lose condition
         {
-            Main.GetComponent<MainController>().loselife();
+            Main.GetComponent<MainController>().Loselife();
         }
     }
 }

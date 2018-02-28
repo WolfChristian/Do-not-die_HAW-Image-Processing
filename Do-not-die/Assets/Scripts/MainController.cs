@@ -48,7 +48,7 @@ public class MainController : MonoBehaviour {
     }
 
     //Lose 1 life updates UI and calls checklife().
-    public void loselife() {
+    public void Loselife() {
         if(loadedLevel == false)
         {
             loadedLevel = true;
@@ -59,17 +59,17 @@ public class MainController : MonoBehaviour {
 
     private IEnumerator LostLife()
     {
-        Debug.Log("LOSTLIFE");
+       
         life--;
         flashScreen.SetActive(true);
         yield return new WaitForSeconds(0.07f);
         flashScreen.SetActive(false);
         gameUI.GetComponent<UIScript>().updateLife();
-        checkLife();
+        CheckLife();
     }
 
     //Checks your lifetotal and sends you to Gameover Scene if lifetotal is 0.
-    private void checkLife() {
+    private void CheckLife() {
         if (life <= 0)
         {   
             //Resets the lifetotal

@@ -64,7 +64,7 @@ public class DragController : MonoBehaviour
 
         if (Timer < 0)
         {
-            Main.GetComponent<MainController>().loselife();
+            Main.GetComponent<MainController>().Loselife();
         }
         else if (food==2&&recycle==2) {
             Main.GetComponent<MainController>().LoadScene();
@@ -73,7 +73,7 @@ public class DragController : MonoBehaviour
     //Lose the game
     public void loseGame()
     {
-        Main.GetComponent<MainController>().loselife();
+        Main.GetComponent<MainController>().Loselife();
     }
     //Shuffles list randomly
     private void Shuffle(List<Vector2> alpha) {

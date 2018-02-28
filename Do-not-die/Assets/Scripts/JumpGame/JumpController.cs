@@ -59,7 +59,7 @@ public class JumpController : MonoBehaviour {
     }
     public void loseTheGame() // called by JumpMan
     {
-        Main.GetComponent<MainController>().loselife(); // lose condition
+        Main.GetComponent<MainController>().Loselife(); // lose condition
     }
 
     void FixedUpdate()

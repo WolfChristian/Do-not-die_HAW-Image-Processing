@@ -71,7 +71,7 @@ public class TiltController : MonoBehaviour {
     //Loses game by calling loselife of the MainController
     private void loseGame() {
        
-        Main.GetComponent<MainController>().loselife();
+        Main.GetComponent<MainController>().Loselife();
 
     }
 }

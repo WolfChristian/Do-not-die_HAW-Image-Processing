@@ -101,6 +101,6 @@ public class ButtonController : MonoBehaviour {
     }
     //Calls the next level with the loselife() function of the MainController.
     private void loseGame() {       
-        Main.GetComponent<MainController>().loselife();
+        Main.GetComponent<MainController>().Loselife();
     }
 }

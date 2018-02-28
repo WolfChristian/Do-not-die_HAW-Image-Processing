@@ -17,6 +17,6 @@ public class HoleScript : MonoBehaviour {
     //Loses game by callin the loselife() function of the MainController
     private void loseGame()
     {
-        Main.GetComponent<MainController>().loselife();
+        Main.GetComponent<MainController>().Loselife();
     }
 }
