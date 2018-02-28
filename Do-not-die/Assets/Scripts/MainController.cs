@@ -13,6 +13,8 @@ public class MainController : MonoBehaviour {
     private int lastLevel=0;
     private int lastLevel2 = 0;
     public int rand;
+    private bool loadedLevel = false;
+    [SerializeField] private GameObject flashScreen;
     //Prevents the MainController and the UI to be destroyed on change of levels
     private void Awake() {
         DontDestroyOnLoad(this);
@@ -47,9 +49,23 @@ public class MainController : MonoBehaviour {
 
     //Lose 1 life updates UI and calls checklife().
     public void loselife() {
+        if(loadedLevel == false)
+        {
+            loadedLevel = true;
+            StartCoroutine(LostLife());
+        }
+             
+    }
+
+    private IEnumerator LostLife()
+    {
+        Debug.Log("LOSTLIFE");
         life--;
+        flashScreen.SetActive(true);
+        yield return new WaitForSeconds(0.07f);
+        flashScreen.SetActive(false);
         gameUI.GetComponent<UIScript>().updateLife();
-        checkLife();      
+        checkLife();
     }
 
     //Checks your lifetotal and sends you to Gameover Scene if lifetotal is 0.
@@ -62,6 +78,7 @@ public class MainController : MonoBehaviour {
         }
         else {
             LoadScene();
+            loadedLevel = false;
         }
     }
     
