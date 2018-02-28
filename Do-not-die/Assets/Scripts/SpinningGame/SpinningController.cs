@@ -9,7 +9,6 @@ public class SpinningController : MonoBehaviour
     private float Timerstart = 0f;
     private float Timer = 100;
     private GameObject Slider;
-    private int score = 0;
 
     private int diff;
 
