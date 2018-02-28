@@ -33,7 +33,7 @@ public class JumpController : MonoBehaviour {
         Slider = GameObject.Find("TimeBar");
         diff = Main.GetComponent<MainController>().Difficulty;
         //changes the gamespeed depending on the difficulty
-        Timerstart = 5.35f;
+        Timerstart = 5.7f;
         if (diff < 5)
         {
             
