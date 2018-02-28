@@ -5,7 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
 
-    public GameObject JumpMain;
+    [SerializeField] private GameObject JumpMain;
 
     void Start()
     {
