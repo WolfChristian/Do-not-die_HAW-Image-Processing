@@ -34,7 +34,7 @@ public class ButtonController : MonoBehaviour {
             Timer = 5f;
             button =Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
             button.transform.SetParent(canvas.transform,false);
-            textfield.text = "Don't push the Red Button";
+            textfield.text = "Don't push";
         }
         else if(diff<10&&diff>5)
         {
@@ -44,14 +44,14 @@ public class ButtonController : MonoBehaviour {
             {
                 button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Do push the Red Button";
+                textfield.text = "Do push";
                 isAlternative = true;
             }
             else
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Don't push the Red Button";
+                textfield.text = "Don't push";
             }
         }
         else
@@ -69,7 +69,7 @@ public class ButtonController : MonoBehaviour {
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
                 button.transform.SetParent(canvas.transform, false);
-                textfield.text = "Don't push the Red Button";
+                textfield.text = "Don't push";
             }
 
         }
