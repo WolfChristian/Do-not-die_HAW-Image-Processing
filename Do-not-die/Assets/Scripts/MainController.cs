@@ -62,7 +62,7 @@ public class MainController : MonoBehaviour {
        
         life--;
         flashScreen.SetActive(true);
-        yield return new WaitForSeconds(0.07f);
+        yield return new WaitForSeconds(0.15f);
         flashScreen.SetActive(false);
         gameUI.GetComponent<UIScript>().updateLife();
         CheckLife();
