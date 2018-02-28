@@ -36,10 +36,12 @@ public class MainController : MonoBehaviour {
             StartCoroutine(LevelChange());
             gameUI.SetActive(false);
             timeBar.transform.localScale = new Vector3(0, 0, 0);
-           
+            
+
     }
     //Subroutine for the crossingscene inbetween levels.
     private IEnumerator LevelChange(){
+        flashScreen.SetActive(false);
         yield return new WaitForSeconds(3f);
         gameUI.SetActive(true);
         SceneManager.LoadScene(rand);
@@ -63,7 +65,6 @@ public class MainController : MonoBehaviour {
         life--;
         flashScreen.SetActive(true);
         yield return new WaitForSeconds(0.15f);
-        flashScreen.SetActive(false);
         gameUI.GetComponent<UIScript>().updateLife();
         CheckLife();
     }
@@ -78,6 +79,7 @@ public class MainController : MonoBehaviour {
         }
         else {
             LoadScene();
+            
             loadedLevel = false;
         }
     }
