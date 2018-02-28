@@ -11,8 +11,7 @@ public class ButtonController : MonoBehaviour {
 
     private GameObject Main;
     private GameObject Slider;
-    [SerializeField] private Text textfield;
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private Text textfield;   
     [SerializeField] private GameObject buttonV1;//Spawnable button 1
     [SerializeField] private GameObject buttonV2;//Spawnable button 2
     private GameObject button;
@@ -29,11 +28,11 @@ public class ButtonController : MonoBehaviour {
         Slider = GameObject.Find("TimeBar");
         diff = Main.GetComponent<MainController>().Difficulty;
         
-        if (diff < 5)
+        if (diff <= 5)
         {
             Timer = 5f;
             button =Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
-            button.transform.SetParent(canvas.transform,false);
+            
             textfield.text = "Don't push";
         }
         else if(diff<10&&diff>5)
@@ -43,14 +42,14 @@ public class ButtonController : MonoBehaviour {
             if (Random.value > 0.3)
             {
                 button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
-                button.transform.SetParent(canvas.transform, false);
+                
                 textfield.text = "Do push";
                 isAlternative = true;
             }
             else
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
-                button.transform.SetParent(canvas.transform, false);
+               
                 textfield.text = "Don't push";
             }
         }
@@ -61,14 +60,14 @@ public class ButtonController : MonoBehaviour {
             if (Random.value > 0.2)
             {
                 button = Instantiate(buttonV2, new Vector3(0, 0, 0), Quaternion.identity);
-                button.transform.SetParent(canvas.transform, false);
+               
                 textfield.text = "Do what you want cause a pirate is free!!";
                 
             }
             else
             {
                 button = Instantiate(buttonV1, new Vector3(0, 0, 0), Quaternion.identity);
-                button.transform.SetParent(canvas.transform, false);
+                
                 textfield.text = "Don't push";
             }
 
@@ -79,7 +78,7 @@ public class ButtonController : MonoBehaviour {
     }
 	 /*
       *Counts down the time and sets the value of the slider.
-      *Calls winGame() or loseGame() after the time is over.
+      *Calls LoadScene() or LoseLife() after the time is over.
       */
 	void FixedUpdate () {
 
@@ -87,20 +86,13 @@ public class ButtonController : MonoBehaviour {
         Slider.GetComponent<Slider>().value = Timer;
         if (Timer < 0 && isAlternative == false)
         {
-            winGame();
+            Main.GetComponent<MainController>().LoadScene();
         }
         else if(Timer<0) {
 
-            loseGame();
+            Main.GetComponent<MainController>().Loselife();
         }
 
     }
-    //Calls the next level with the LoadScene() function of the MainController.
-    private void winGame() {
-        Main.GetComponent<MainController>().LoadScene();
-    }
-    //Calls the next level with the loselife() function of the MainController.
-    private void loseGame() {       
-        Main.GetComponent<MainController>().Loselife();
-    }
+   
 }
